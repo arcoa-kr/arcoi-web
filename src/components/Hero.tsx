@@ -1,4 +1,5 @@
 import StarCanvas from './StarCanvas'
+import StoreButtons from './StoreButtons'
 
 export default function Hero() {
   return (
@@ -11,35 +12,39 @@ export default function Hero() {
         alignItems: 'center',
         justifyContent: 'center',
         overflow: 'hidden',
-        background: 'linear-gradient(160deg, #0D0B1E 0%, #1A1A2E 40%, #2D1B4E 70%, #1A1A2E 100%)',
       }}
     >
-      {/* Video background (placeholder — hero-bg.mp4 will be added manually) */}
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        style={{
-          position: 'absolute',
-          inset: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          zIndex: 0,
-          opacity: 0.6,
-        }}
-      >
-        <source src="./hero-bg.mp4" type="video/mp4" />
-        {/* Fallback: gradient background already set on section */}
-      </video>
-
-      {/* Dark overlay */}
+      {/* Luna background image */}
       <div
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(to bottom, rgba(13,11,30,0.55) 0%, rgba(26,26,46,0.45) 50%, rgba(13,11,30,0.7) 100%)',
+          backgroundImage: 'url(/hero-luna.webp)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center bottom',
+          zIndex: 0,
+        }}
+      />
+
+      {/* Dark overlay for text readability */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: 'linear-gradient(to right, rgba(13,11,30,0.7) 0%, rgba(13,11,30,0.3) 35%, transparent 55%)',
+          zIndex: 1,
+        }}
+      />
+
+      {/* Bottom fade into next section */}
+      <div
+        style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: '100px',
+          background: 'linear-gradient(to bottom, transparent, #1A1A2E)',
           zIndex: 2,
         }}
       />
@@ -47,48 +52,27 @@ export default function Hero() {
       {/* Star particles */}
       <StarCanvas />
 
-      {/* Luna image placeholder */}
-      <div
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          right: '8%',
-          width: 'clamp(220px, 32vw, 480px)',
-          height: 'clamp(320px, 50vw, 680px)',
-          zIndex: 3,
-          display: 'flex',
-          alignItems: 'flex-end',
-          justifyContent: 'center',
-        }}
-      >
-        <div
-          className="placeholder-img"
-          style={{ width: '100%', height: '100%', borderRadius: '24px 24px 0 0', fontSize: '13px' }}
-        >
-          Luna Image Here<br />(hero-luna.png)
-        </div>
-      </div>
-
-      {/* Main content */}
+      {/* Main content — left aligned */}
       <div
         style={{
           position: 'relative',
           zIndex: 4,
-          textAlign: 'center',
-          padding: '0 24px',
-          maxWidth: '680px',
+          textAlign: 'left',
+          padding: '0 48px 100px',
+          maxWidth: '950px',
+          width: '100%',
         }}
       >
         {/* Brand badge */}
         <p
           style={{
             fontFamily: "'Poppins', sans-serif",
-            fontSize: '12px',
-            fontWeight: 500,
-            letterSpacing: '0.2em',
-            color: 'rgba(244, 167, 187, 0.8)',
-            marginBottom: '28px',
-            textTransform: 'uppercase',
+            fontSize: '15px',
+            fontWeight: 300,
+            letterSpacing: '1px',
+            color: '#F4A7BB',
+            marginBottom: '20px',
+            marginLeft: '4px'
           }}
         >
           arcoi by ARCOA
@@ -97,54 +81,41 @@ export default function Hero() {
         {/* Main copy */}
         <h1
           style={{
-            fontFamily: "'Pretendard Variable', 'Pretendard', sans-serif",
-            fontSize: 'clamp(28px, 5.5vw, 52px)',
-            fontWeight: 700,
-            lineHeight: 1.35,
+            fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
+            fontSize: 'clamp(48px, 4.5vw, 50px)',
+            fontWeight: 600,
+            lineHeight: 1.4,
             letterSpacing: '-0.03em',
             color: '#F0EEFF',
-            marginBottom: '20px',
-            textShadow: '0 2px 24px rgba(124, 91, 240, 0.3)',
+            marginBottom: '40px',
+            textShadow: '0 2px 32px rgba(13,11,30,0.8)',
           }}
         >
-          딱히 슬프진 않은데<br />
-          괜찮지도 않은 날,<br />
-          <span
-            style={{
-              background: 'linear-gradient(90deg, #C4A0FF, #F4A7BB)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}
-          >
-            타로 한 장이
-          </span>
-          <br />
-          오늘의 말문을 열어줘요.
+          하루 한 장, 타로 일기
         </h1>
 
         {/* Sub copy */}
         <p
           style={{
             fontFamily: "'Pretendard Variable', 'Pretendard', sans-serif",
-            fontSize: 'clamp(14px, 2vw, 17px)',
-            fontWeight: 400,
-            color: 'rgba(240, 238, 255, 0.65)',
+            fontSize: 'clamp(16px, 2vw, 18px)',
+            fontWeight: 300,
+            color: '#dddddd',
             marginBottom: '40px',
             letterSpacing: '-0.01em',
           }}
         >
-          arcoi — 하루 한 장, 타로일기
+          딱히 슬프진 않아도<br />
+          괜찮지도 않은 하루하루...<br />
+          타로 한 장이<br />
+          오늘의 말문을 열어줘.
         </p>
 
         {/* CTA */}
-        <a
-          href="https://toss.im/arcoi"
-          className="btn-glow"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          토스에서 아르코이 검색하기
-        </a>
+        <div>    
+              <StoreButtons />
+        </div>
+          
       </div>
 
       {/* Scroll arrow */}
