@@ -1,7 +1,23 @@
-import StarCanvas from './StarCanvas'
+import { useEffect, useRef } from 'react'
+import StarParticles from './StarParticles'
 import StoreButtons from './StoreButtons'
 
 export default function Hero() {
+  const contentRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const content = contentRef.current
+      if (!content) return
+      const x = (e.clientX / window.innerWidth - 0.5) * 2
+      const y = (e.clientY / window.innerHeight - 0.5) * 2
+      content.style.transform = `translate(${x * 6}px, ${y * 4}px)`
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+    return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [])
+
   return (
     <section
       id="hero"
@@ -49,11 +65,12 @@ export default function Hero() {
         }}
       />
 
-      {/* Star particles */}
-      <StarCanvas />
+      {/* Firefly particles */}
+      <StarParticles />
 
-      {/* Main content — left aligned */}
+      {/* Main content — left aligned with parallax */}
       <div
+        ref={contentRef}
         style={{
           position: 'relative',
           zIndex: 4,
@@ -61,9 +78,10 @@ export default function Hero() {
           padding: '0 48px 100px',
           maxWidth: '950px',
           width: '100%',
+          transition: 'transform 0.2s ease-out',
+          willChange: 'transform',
         }}
       >
-        {/* Brand badge */}
         <p
           style={{
             fontFamily: "'Poppins', sans-serif",
@@ -78,7 +96,6 @@ export default function Hero() {
           arcoi by ARCOA
         </p>
 
-        {/* Main copy */}
         <h1
           style={{
             fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
@@ -94,7 +111,6 @@ export default function Hero() {
           하루 한 장, 타로 일기
         </h1>
 
-        {/* Sub copy */}
         <p
           style={{
             fontFamily: "'Pretendard Variable', 'Pretendard', sans-serif",
@@ -111,11 +127,9 @@ export default function Hero() {
           오늘의 말문을 열어줘.
         </p>
 
-        {/* CTA */}
         <div>    
-              <StoreButtons />
+          <StoreButtons />
         </div>
-          
       </div>
 
       {/* Scroll arrow */}

@@ -19,7 +19,7 @@ export default function StoreButtons() {
       {/* 데스크톱: 안내 문구 */}
       <div className="hidden sm:flex items-center" style={{ color: '#cccccc', fontSize: '14px' }}>
         <img src="/toss_w.png" alt="toss" style={{ height: '18px', marginRight: '4px' }} />
-        <p>미니앱에서 '<b>아르코이</b>'를 검색해 보세요.</p>
+        <p>미니앱에서 <b style={{ color: '#eeeeee', fontSize: '15px' }}>아르코이</b>를 검색해 보세요.</p>
       </div>
     </div>
   )
