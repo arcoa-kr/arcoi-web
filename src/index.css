@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
 @import "tailwindcss";
 
-@theme {
+theme {
   --color-arcoi-purple: #7C5BF0;
   --color-arcoi-pink: #F4A7BB;
   --color-arcoi-navy: #1A1A2E;

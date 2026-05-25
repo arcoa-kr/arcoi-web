@@ -125,8 +125,6 @@ export default function Characters() {
             const char = masters[charIdx]
             const pos = positionStyles[posIdx]
             const baseW = 240 // px 기준 중앙 카드 너비
-            const w = baseW * pos.scale
-            const h = w * 1.5 // 2:3 비율
 
             return (
               <div
