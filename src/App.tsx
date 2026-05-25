@@ -9,7 +9,6 @@ import Footer from './sections/Footer'
 
 function App() {
   useEffect(() => {
-    const elements = document.querySelectorAll<HTMLElement>('.fade-in')
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
@@ -20,9 +19,24 @@ function App() {
       },
       { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
     )
-    elements.forEach(el => observer.observe(el))
-    return () => observer.disconnect()
-  }, [])
+  
+    const observe = () => {
+      document.querySelectorAll<HTMLElement>('.fade-in:not(.visible)').forEach(el => {
+        observer.observe(el)
+      })
+    }
+  
+    observe()
+  
+    // 새로 추가되는 .fade-in 요소도 감지
+    const mutation = new MutationObserver(observe)
+    mutation.observe(document.body, { childList: true, subtree: true })
+  
+    return () => {
+      observer.disconnect()
+      mutation.disconnect()
+    }
+  }, [])  
 
   return (
     <div style={{ minHeight: '100svh', background: '#1A1A2E' }}>

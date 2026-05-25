@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import useIsMobile from '../hooks/useIsMobile'
+import SectionChip from '../components/SectionChip'
 
 const masters = [
   {
@@ -70,18 +72,18 @@ const positionStyles = [
   { scale: 0.75, opacity: 0.7, z: 2 },  // 오른쪽
   { scale: 0.55, opacity: 0.4, z: 1 },  // 오른쪽 끝
 ]
-
-const positionX = [-28, -13, 0, 13, 28] // vw 단위 오프셋
-
 export default function Characters() {
   const [activeIdx, setActiveIdx] = useState(2) // 루나 시작
+  const isMobile = useIsMobile()
+  const positionX = isMobile ? [-38, -18, 0, 18, 38] : [-28, -13, 0, 13, 28]
+  const baseW = isMobile ? 160 : 240  
 
   const order = getOrder(activeIdx, masters.length)
 
   return (
     <section
       style={{
-        padding: 'clamp(72px, 10vw, 100px) 0',
+        padding: 'clamp(100px, 10vw, 150px) 0',
         background: '#0D0B1E',
         position: 'relative',
         overflow: 'hidden',
@@ -101,14 +103,10 @@ export default function Characters() {
       <div style={{ position: 'relative', zIndex: 1, maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
         {/* 제목 */}
         <div className="fade-in" style={{ textAlign: 'center', marginBottom: 'clamp(32px, 5vw, 48px)' }}>
-          <p style={{
-            fontFamily: "'Poppins', sans-serif", fontSize: '12px', fontWeight: 500,
-            letterSpacing: '0.18em', color: 'rgba(196,160,255,0.7)',
-            textTransform: 'uppercase', marginBottom: '12px',
-          }}>Characters</p>
+        <SectionChip label="Characters" />
           <h2 style={{
             fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
-            fontSize: 'clamp(24px,4vw,38px)', fontWeight: 800,
+            fontSize: 'clamp(26px,4vw,38px)', fontWeight: 800,
             letterSpacing: '-0.03em', color: '#F0EEFF', margin: 0,
           }}>arcoi의 세계</h2>
         </div>
@@ -116,7 +114,7 @@ export default function Characters() {
         {/* 카드 캐러셀 */}
         <div style={{
           position: 'relative',
-          height: 'clamp(320px, 45vw, 480px)',
+          height: isMobile ? '300px' : 'clamp(320px, 45vw, 480px)', // 모바일 높이 추가
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -124,7 +122,6 @@ export default function Characters() {
           {order.map((charIdx, posIdx) => {
             const char = masters[charIdx]
             const pos = positionStyles[posIdx]
-            const baseW = 240 // px 기준 중앙 카드 너비
 
             return (
               <div

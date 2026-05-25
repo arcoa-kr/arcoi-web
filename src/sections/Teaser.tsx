@@ -1,5 +1,6 @@
 import StoreButtons from '../components/StoreButtons'
 import StibeeForm from '../components/StibeeForm'
+import SectionChip from '../components/SectionChip'
 
 export default function Teaser() {
   return (
@@ -47,34 +48,16 @@ export default function Teaser() {
         zIndex: 2,
       }} />
 
-      <div style={{ maxWidth: '640px', margin: '0 auto', position: 'relative', zIndex: 3 }}>
+      <div className="fade-in" style={{ maxWidth: '640px', margin: '0 auto', position: 'relative', zIndex: 3 }}>
         {/* Badge */}
-        <div
-          className="fade-in"
-          style={{
-            display: 'inline-block',
-            padding: '6px 16px',
-            background: 'rgba(244,167,187,0.1)',
-            border: '1px solid rgba(244,167,187,0.25)',
-            borderRadius: '50px',
-            fontFamily: "'Poppins', sans-serif",
-            fontSize: '11px',
-            fontWeight: 500,
-            letterSpacing: '0.15em',
-            color: 'rgba(244,167,187,0.85)',
-            textTransform: 'uppercase',
-            marginBottom: '28px',
-          }}
-        >
-          Coming Soon
-        </div>
+        <SectionChip label="Coming Soon" />
 
         {/* Main copy */}
         <h2
           className="fade-in"
           style={{
             fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
-            fontSize: 'clamp(26px, 4.5vw, 44px)',
+            fontSize: 'clamp(32px, 4.5vw, 44px)',
             fontWeight: 800,
             letterSpacing: '-0.03em',
             color: '#F0EEFF',

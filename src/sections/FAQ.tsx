@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import SectionChip from '../components/SectionChip'
 
 const faqs = [
   {
@@ -33,7 +34,7 @@ export default function FAQ() {
   return (
     <section
       style={{
-        padding: 'clamp(80px, 12vw, 120px) 24px',
+        padding: 'clamp(100px, 12vw, 150px) 24px',
         background: '#080810',
         position: 'relative',
       }}
@@ -41,14 +42,10 @@ export default function FAQ() {
       <div style={{ maxWidth: '720px', margin: '0 auto' }}>
         {/* 제목 */}
         <div className="fade-in" style={{ textAlign: 'center', marginBottom: 'clamp(40px, 6vw, 60px)' }}>
-          <p style={{
-            fontFamily: "'Poppins', sans-serif", fontSize: '12px', fontWeight: 500,
-            letterSpacing: '0.18em', color: 'rgba(244,167,187,0.7)',
-            textTransform: 'uppercase', marginBottom: '12px',
-          }}>FAQ</p>
+        <SectionChip label="FAQ" />
           <h2 style={{
             fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
-            fontSize: 'clamp(24px,4vw,38px)', fontWeight: 800,
+            fontSize: 'clamp(26px,4vw,38px)', fontWeight: 800,
             letterSpacing: '-0.03em', color: '#F0EEFF', margin: 0,
           }}>자주 묻는 질문</h2>
         </div>

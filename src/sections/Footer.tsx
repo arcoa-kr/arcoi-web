@@ -1,98 +1,79 @@
+import useIsMobile from '../hooks/useIsMobile'
+
 export default function Footer() {
+  const isMobile = useIsMobile()
+
   return (
-    <footer
-      style={{
-        padding: 'clamp(40px, 6vw, 64px) 24px',
-        background: '#0D0B1E',
-        borderTop: '1px solid rgba(124, 91, 240, 0.1)',
-      }}
-    >
-      <div
-        style={{
-          maxWidth: '1080px',
-          margin: '0 auto',
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          gap: '24px',
-        }}
-      >
-        {/* Brand */}
-        <div>
-          <p
-            style={{
-              fontFamily: "'Poppins', sans-serif",
-              fontSize: '16px',
-              fontWeight: 600,
-              color: '#F0EEFF',
-              letterSpacing: '-0.01em',
-              marginBottom: '4px',
-            }}
-          >
-            arcoi
-          </p>
-          <p
-            style={{
-              fontFamily: "'Pretendard Variable', 'Pretendard', sans-serif",
-              fontSize: '12px',
-              color: 'rgba(240, 238, 255, 0.35)',
-              letterSpacing: '0.02em',
-            }}
-          >
-            by ARCOA
-          </p>
-        </div>
+    <footer style={{
+      borderTop: '1px solid rgba(124,91,240,0.15)',
+      background: '#08080F',
+      padding: isMobile ? '48px 24px 56px' : '48px 40px 64px',
+    }}>
+      <div style={{
+        maxWidth: '1080px', margin: '0 auto',
+        display: 'flex',
+        flexDirection: isMobile ? 'column' : 'row',
+        justifyContent: 'space-between',
+        gap: isMobile ? '40px' : '48px',
+      }}>
 
-        {/* Links */}
-        <div
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '8px 24px',
-            alignItems: 'center',
-          }}
-        >
-          {[
-            { label: 'arcoa.kr', href: 'https://arcoa.kr' },
-            { label: 'Threads', href: 'https://www.threads.com/@arcoa.kr' },
-            { label: 'LinkedIn', href: 'https://www.linkedin.com/company/arcoa-kr/' },
-          ].map(link => (
-            <a
-              key={link.label}
-              href={link.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                fontFamily: "'Pretendard Variable', 'Pretendard', sans-serif",
-                fontSize: '13px',
-                fontWeight: 400,
-                color: 'rgba(240, 238, 255, 0.45)',
-                textDecoration: 'none',
-                transition: 'color 0.2s ease',
-              }}
-              onMouseEnter={e => ((e.target as HTMLAnchorElement).style.color = 'rgba(196, 160, 255, 0.85)')}
-              onMouseLeave={e => ((e.target as HTMLAnchorElement).style.color = 'rgba(240, 238, 255, 0.45)')}
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
-
-        {/* Copyright */}
-        <p
-          style={{
+        {/* 로고 + 사업자 정보 */}
+        <div style={{ order: isMobile ? 2 : 1 }}>
+          <img src="/ARCOA.kr.png" alt="ARCOA" style={{ height: '80px', objectFit: 'contain', marginBottom: '12px' }} />
+          <div style={{
+            fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
+            fontSize: '13px', color: 'rgba(240,238,255,0.35)', lineHeight: 1.8,
+          }}>
+            <p style={{ margin: 0 }}>사업자등록번호 : 343-02-03607</p>
+            <p style={{ margin: 0 }}>대표 : 박지안</p>
+            <p style={{ margin: 0 }}>문의 : help@arcoa.kr</p>
+          </div>
+          <p style={{
             fontFamily: "'Poppins', sans-serif",
-            fontSize: '11px',
-            color: 'rgba(240, 238, 255, 0.25)',
-            letterSpacing: '0.02em',
-            width: '100%',
-            textAlign: 'center',
-            marginTop: '8px',
-          }}
-        >
-          © 2026 ARCOA. All rights reserved.
-        </p>
+            fontSize: '12px', color: 'rgba(240,238,255,0.25)',
+            marginTop: '28px',
+          }}>
+            © 2026 arcoi by <a href="https://arcoa.kr" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(240,238,255,0.5)', textDecoration: 'underline' }}>ARCOA</a>
+          </p>
+        </div>
+
+        {/* 링크 그룹 */}
+        <div style={{
+          display: 'flex', gap: isMobile ? '40px' : '60px',
+          order: isMobile ? 1 : 2,
+        }}>
+          {/* Explore */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+            <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', fontWeight: 600, color: '#F0EEFF', marginBottom: '4px' }}>Explore</h3>
+            {[
+              { label: 'Why arcoi', href: '#empathy' },
+              { label: 'How it works', href: '#how-it-works' },
+              { label: 'Characters', href: '#characters' },
+              { label: 'FAQ', href: '#faq' },
+            ].map(link => (
+              <a key={link.label} href={link.href} style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'rgba(240,238,255,0.4)', textDecoration: 'none' }}>{link.label}</a>
+            ))}
+          </div>
+
+          {/* Family */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+            <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', fontWeight: 600, color: '#F0EEFF', marginBottom: '4px' }}>Family</h3>
+            {[
+              { label: 'ARCOA', href: 'https://arcoa.kr' },
+              { label: 'peeca', href: 'https://peeca.arcoa.kr' },
+            ].map(link => (
+              <a key={link.label} href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'rgba(240,238,255,0.4)', textDecoration: 'none' }}>{link.label}</a>
+            ))}
+          </div>
+
+          {/* Support */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+            <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', fontWeight: 600, color: '#F0EEFF', marginBottom: '4px' }}>Support</h3>
+            <a href="https://arcoa-kr.notion.site/330b0d619bef80a6b5d1e69c7b600865" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'rgba(240,238,255,0.4)', textDecoration: 'none' }}>Contact</a>
+            <a href="#" style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'rgba(240,238,255,0.4)', textDecoration: 'none' }}>Terms of Service</a>
+            <a href="#" style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'rgba(240,238,255,0.55)', textDecoration: 'none', fontWeight: 500 }}>Privacy Policy</a>
+          </div>
+        </div>
       </div>
     </footer>
   )

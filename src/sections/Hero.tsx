@@ -1,9 +1,11 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import StarParticles from '../components/StarParticles'
 import StoreButtons from '../components/StoreButtons'
+import useIsMobile from '../hooks/useIsMobile'
 
 export default function Hero() {
   const contentRef = useRef<HTMLDivElement>(null)
+  const isMobile = useIsMobile()
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -16,6 +18,14 @@ export default function Hero() {
 
     window.addEventListener('mousemove', handleMouseMove)
     return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [])
+
+  const [scrollY, setScrollY] = useState(0)
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY)
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
@@ -37,7 +47,7 @@ export default function Hero() {
           inset: 0,
           backgroundImage: 'url(/hero-luna.webp)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center bottom',
+          backgroundPosition: isMobile ? '62% bottom' : 'center bottom',
           zIndex: 0,
         }}
       />
@@ -75,17 +85,18 @@ export default function Hero() {
           position: 'relative',
           zIndex: 4,
           textAlign: 'left',
-          padding: '0 48px 100px',
+          padding: '0 36px 48px',
           maxWidth: '950px',
           width: '100%',
           transition: 'transform 0.2s ease-out',
+          transform: `translateY(${-scrollY * 0.3}px)`,
           willChange: 'transform',
         }}
       >
-        <p
+        <p className="fade-in" 
           style={{
             fontFamily: "'Poppins', sans-serif",
-            fontSize: '15px',
+            fontSize: '14px',
             fontWeight: 300,
             letterSpacing: '1px',
             color: '#F4A7BB',
@@ -96,10 +107,10 @@ export default function Hero() {
           arcoi by ARCOA
         </p>
 
-        <h1
+        <h1 className="fade-in" 
           style={{
             fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
-            fontSize: 'clamp(48px, 4.5vw, 50px)',
+            fontSize: 'clamp(40px, 4.5vw, 55px)',
             fontWeight: 600,
             lineHeight: 1.4,
             letterSpacing: '-0.03em',
@@ -108,26 +119,32 @@ export default function Hero() {
             textShadow: '0 2px 32px rgba(13,11,30,0.8)',
           }}
         >
-          하루 한 장, 타로 일기
+          하루 한 장,
+          <p style={{ fontSize:'clamp(43px, 4.7vw, 60px)' }}>타로 일기</p>
         </h1>
 
-        <p
+        <p className="fade-in" 
           style={{
             fontFamily: "'Pretendard Variable', 'Pretendard', sans-serif",
-            fontSize: 'clamp(16px, 2vw, 18px)',
-            fontWeight: 300,
-            color: '#dddddd',
+            fontSize: 'clamp(17px, 2vw, 19px)',
+            fontWeight: 200,
+            color: '#DAD0EF',
+            lineHeight: 'clamp(27px, 2vw, 33px)',
+            marginLeft: '4px',
             marginBottom: '40px',
             letterSpacing: '-0.01em',
           }}
         >
-          딱히 슬프진 않아도<br />
-          괜찮지도 않은 하루하루...<br />
-          타로 한 장이<br />
-          오늘의 말문을 열어줘.
+          딱히 슬프지 않지만<br />
+          괜찮지도 않은 하루하루 ...<br />
+          타로 한 장이 너의 하루를 알아줄 거야.
         </p>
 
-        <div>    
+        <div className="fade-in" 
+          style={{
+            marginLeft: '4px',
+          }}
+        >    
           <StoreButtons />
         </div>
       </div>
