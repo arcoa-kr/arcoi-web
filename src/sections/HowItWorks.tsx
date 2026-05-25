@@ -52,7 +52,7 @@ export default function HowItWorks() {
   // ── 모바일 ──
   if (isMobile) {
     return (
-      <section
+      <section id="how-it-works" 
         style={{ padding: '100px 24px', background: '#1A1A2E', overflow: 'hidden' }}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
@@ -133,6 +133,7 @@ export default function HowItWorks() {
   return (
     <div
       ref={stickyRef}
+      id="how-it-works" 
       style={{
         height: `${steps.length * 60}vh`,
         position: 'relative',

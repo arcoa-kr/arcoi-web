@@ -82,6 +82,7 @@ export default function Characters() {
 
   return (
     <section
+      id="characters" 
       style={{
         padding: 'clamp(100px, 10vw, 150px) 0',
         background: '#0D0B1E',

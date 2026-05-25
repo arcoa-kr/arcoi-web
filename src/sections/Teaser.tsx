@@ -4,7 +4,7 @@ import SectionChip from '../components/SectionChip'
 
 export default function Teaser() {
   return (
-    <section
+    <section id="teaser" 
       style={{
         padding: 'clamp(80px, 12vw, 140px) 24px',
         position: 'relative',

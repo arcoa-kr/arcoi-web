@@ -33,6 +33,7 @@ export default function Empathy() {
   return (
     <section
       ref={sectionRef}
+      id="empathy"
       style={{
         padding: isMobile ? '100px 16px' : 'clamp(100px, 10vw, 150px) 24px',
         background: 'linear-gradient(180deg, #1A1A2E 0%, #16213E 100%)',

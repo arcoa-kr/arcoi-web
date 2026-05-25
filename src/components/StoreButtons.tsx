@@ -1,5 +1,5 @@
 const STORE_LINKS = {
-  toss: 'https://toss.im/arcoi',
+  toss: 'https://minion.toss.im/F9bFAKvC',
 }
 
 export default function StoreButtons() {
