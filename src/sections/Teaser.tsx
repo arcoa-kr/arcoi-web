@@ -1,57 +1,66 @@
+import StoreButtons from '../components/StoreButtons'
+
 export default function Teaser() {
   return (
     <section
       style={{
         padding: 'clamp(80px, 12vw, 140px) 24px',
-        background: 'linear-gradient(160deg, #2D1B4E 0%, #1A1A2E 50%, #2D1B4E 100%)',
         position: 'relative',
         overflow: 'hidden',
         textAlign: 'center',
       }}
     >
-      {/* Glow orbs */}
-      <div
-        aria-hidden
-        style={{
-          position: 'absolute',
-          top: '20%',
-          left: '10%',
-          width: '300px',
-          height: '300px',
-          borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(124, 91, 240, 0.15) 0%, transparent 70%)',
-          pointerEvents: 'none',
-        }}
-      />
-      <div
-        aria-hidden
-        style={{
-          position: 'absolute',
-          bottom: '15%',
-          right: '8%',
-          width: '250px',
-          height: '250px',
-          borderRadius: '50%',
-          background: 'radial-gradient(circle, rgba(244, 167, 187, 0.12) 0%, transparent 70%)',
-          pointerEvents: 'none',
-        }}
-      />
+      {/* 배경 이미지 */}
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        backgroundImage: 'url(/teaser-bg.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        zIndex: 0,
+      }} />
 
-      <div style={{ maxWidth: '640px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
+      {/* 어두운 오버레이 */}
+      <div style={{
+        position: 'absolute',
+        inset: 0,
+        background: 'rgba(8,8,16,0.7)',
+        zIndex: 1,
+      }} />
+
+      {/* 상단 페이드 */}
+      <div style={{
+        position: 'absolute',
+        top: 0, left: 0, right: 0,
+        height: '120px',
+        background: 'linear-gradient(to bottom, #080810, transparent)',
+        zIndex: 2,
+      }} />
+
+      {/* 하단 페이드 */}
+      <div style={{
+        position: 'absolute',
+        bottom: 0, left: 0, right: 0,
+        height: '120px',
+        background: 'linear-gradient(to top, #080810, transparent)',
+        zIndex: 2,
+      }} />
+
+      <div style={{ maxWidth: '640px', margin: '0 auto', position: 'relative', zIndex: 3 }}>
         {/* Badge */}
         <div
           className="fade-in"
           style={{
             display: 'inline-block',
             padding: '6px 16px',
-            background: 'rgba(124, 91, 240, 0.15)',
-            border: '1px solid rgba(124, 91, 240, 0.3)',
+            background: 'rgba(244,167,187,0.1)',
+            border: '1px solid rgba(244,167,187,0.25)',
             borderRadius: '50px',
             fontFamily: "'Poppins', sans-serif",
             fontSize: '11px',
             fontWeight: 500,
             letterSpacing: '0.15em',
-            color: 'rgba(196, 160, 255, 0.85)',
+            color: 'rgba(244,167,187,0.85)',
             textTransform: 'uppercase',
             marginBottom: '28px',
           }}
@@ -63,9 +72,9 @@ export default function Teaser() {
         <h2
           className="fade-in"
           style={{
-            fontFamily: "'Pretendard Variable', 'Pretendard', sans-serif",
+            fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
             fontSize: 'clamp(26px, 4.5vw, 44px)',
-            fontWeight: 700,
+            fontWeight: 800,
             letterSpacing: '-0.03em',
             color: '#F0EEFF',
             lineHeight: 1.3,
@@ -73,13 +82,11 @@ export default function Teaser() {
           }}
         >
           arcoi의 이야기는<br />
-          <span
-            style={{
-              background: 'linear-gradient(90deg, #C4A0FF, #F4A7BB)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-            }}
-          >
+          <span style={{
+            background: 'linear-gradient(90deg, #C4A0FF, #F4A7BB)',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+          }}>
             이제 시작이에요.
           </span>
         </h2>
@@ -88,10 +95,10 @@ export default function Teaser() {
         <p
           className="fade-in"
           style={{
-            fontFamily: "'Pretendard Variable', 'Pretendard', sans-serif",
+            fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
             fontSize: 'clamp(14px, 2vw, 17px)',
             fontWeight: 400,
-            color: 'rgba(240, 238, 255, 0.55)',
+            color: 'rgba(240,238,255,0.55)',
             letterSpacing: '-0.01em',
             marginBottom: '48px',
             lineHeight: 1.7,
@@ -101,7 +108,7 @@ export default function Teaser() {
           5명의 마스터와 함께하는 더 넓은 세계를 기다려주세요.
         </p>
 
-        {/* CTA buttons */}
+        {/* CTA */}
         <div
           className="fade-in"
           style={{
@@ -109,25 +116,15 @@ export default function Teaser() {
             flexWrap: 'wrap',
             gap: '14px',
             justifyContent: 'center',
+            marginBottom: '32px',
           }}
         >
-          <a
-            href="https://arcoa.kr/wallpaper"
-            className="btn-outline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a href="https://arcoa.kr/wallpaper" className="btn-outline" target="_blank" rel="noopener noreferrer">
             월페이퍼 받으러 가기
           </a>
-          <a
-            href="https://toss.im/arcoi"
-            className="btn-glow"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            토스에서 아르코이 검색하기
-          </a>
         </div>
+
+        <StoreButtons />
       </div>
     </section>
   )

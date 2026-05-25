@@ -3,6 +3,7 @@ import Hero from './sections/Hero'
 import Empathy from './sections/Empathy'
 import HowItWorks from './sections/HowItWorks'
 import Characters from './sections/Characters'
+import FAQ from './sections/FAQ'
 import Teaser from './sections/Teaser'
 import Footer from './sections/Footer'
 
@@ -29,6 +30,7 @@ function App() {
       <Empathy />
       <HowItWorks />
       <Characters />
+      <FAQ />
       <Teaser />
       <Footer />
     </div>
