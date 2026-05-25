@@ -132,3 +132,16 @@ body {
   background: linear-gradient(135deg, #7C5BF0, #F4A7BB);
   box-shadow: 0 0 14px rgba(124, 91, 240, 0.6);
 }
+
+/* ─── Flip Card ─── */
+.flip-card.flipped { transform: rotateY(180deg); }
+.flip-card.flipped:hover { transform: rotateY(0deg); }
+
+/* ─── Firefly particles ─── */
+/* (StarParticles 컴포넌트에서 인라인으로 keyframes를 생성하므로 여기선 fallback만) */
+
+/* ─── Hero text parallax ─── */
+.hero-content {
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}

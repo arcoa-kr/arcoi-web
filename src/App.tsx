@@ -1,13 +1,12 @@
 import { useEffect } from 'react'
-import Hero from './components/Hero'
-import Empathy from './components/Empathy'
-import HowItWorks from './components/HowItWorks'
-import Characters from './components/Characters'
-import Teaser from './components/Teaser'
-import Footer from './components/Footer'
+import Hero from './sections/Hero'
+import Empathy from './sections/Empathy'
+import HowItWorks from './sections/HowItWorks'
+import Characters from './sections/Characters'
+import Teaser from './sections/Teaser'
+import Footer from './sections/Footer'
 
 function App() {
-  // Scroll reveal
   useEffect(() => {
     const elements = document.querySelectorAll<HTMLElement>('.fade-in')
     const observer = new IntersectionObserver(

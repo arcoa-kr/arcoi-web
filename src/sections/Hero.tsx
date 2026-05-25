@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
-import StarParticles from './StarParticles'
-import StoreButtons from './StoreButtons'
+import StarParticles from '../components/StarParticles'
+import StoreButtons from '../components/StoreButtons'
 
 export default function Hero() {
   const contentRef = useRef<HTMLDivElement>(null)
