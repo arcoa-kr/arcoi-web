@@ -145,3 +145,7 @@ body {
   transition: transform 0.2s ease-out;
   will-change: transform;
 }
+
+input[type="email"]::placeholder {
+  color: rgba(188, 188, 188, 0.8);
+}

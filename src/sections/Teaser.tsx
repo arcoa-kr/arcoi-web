@@ -1,4 +1,5 @@
 import StoreButtons from '../components/StoreButtons'
+import StibeeForm from '../components/StibeeForm'
 
 export default function Teaser() {
   return (
@@ -122,9 +123,14 @@ export default function Teaser() {
           <a href="https://arcoa.kr/wallpaper" className="btn-outline" target="_blank" rel="noopener noreferrer">
             월페이퍼 받으러 가기
           </a>
+          <StibeeForm />
         </div>
 
-        <StoreButtons />
+        <div style={{ 
+          display: 'flex',
+          justifyContent: 'center', }}>
+          <StoreButtons />
+        </div>
       </div>
     </section>
   )
