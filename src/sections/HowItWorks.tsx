@@ -68,7 +68,7 @@ export default function HowItWorks() {
     <div
       ref={stickyRef}
       style={{
-        height: `${steps.length * 100}vh`,
+        height: `${steps.length * 50}vh`,
         position: 'relative',
         background: '#1A1A2E',
       }}
