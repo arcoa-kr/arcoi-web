@@ -84,8 +84,8 @@ export default function Characters() {
     <section
       id="characters" 
       style={{
-        padding: 'clamp(100px, 10vw, 150px) 0',
-        background: '#0D0B1E',
+        padding: 'clamp(120px, 10vw, 240px) 0',
+        background: '#0D0B11',
         position: 'relative',
         overflow: 'hidden',
       }}
@@ -95,13 +95,13 @@ export default function Characters() {
         style={{
           position: 'absolute',
           inset: 0,
-          background: `radial-gradient(ellipse at 50% 50%, ${masters[activeIdx].color}18 0%, transparent 70%)`,
+          background: `radial-gradient(ellipse at 50% 50%, ${masters[activeIdx].color}18 0%, transparent 88%)`,
           transition: 'background 0.6s ease',
           pointerEvents: 'none',
         }}
       />
 
-      <div style={{ position: 'relative', zIndex: 1, maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+      <div style={{ position: 'relative', zIndex: 1, maxWidth: '1000px', margin: '0 auto', padding: '0 24px' }}>
         {/* 제목 */}
         <div className="fade-in" style={{ textAlign: 'center', marginBottom: 'clamp(32px, 5vw, 48px)' }}>
         <SectionChip label="Characters" />
@@ -115,7 +115,7 @@ export default function Characters() {
         {/* 카드 캐러셀 */}
         <div style={{
           position: 'relative',
-          height: isMobile ? '300px' : 'clamp(320px, 45vw, 480px)', // 모바일 높이 추가
+          height: isMobile ? '330px' : 'clamp(320px, 45vw, 480px)', // 모바일 높이 추가
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -259,7 +259,7 @@ export default function Characters() {
                 fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
                 fontSize: 'clamp(15px, 2vw, 19px)',
                 fontWeight: 400,
-                color: 'rgba(240,238,255,0.65)',
+                color: 'rgba(240,238,255)',
                 fontStyle: 'italic',
               }}>"{masters[activeIdx].quote}"</p>
             </div>

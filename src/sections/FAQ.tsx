@@ -34,7 +34,7 @@ export default function FAQ() {
   return (
     <section id="faq" 
       style={{
-        padding: 'clamp(100px, 12vw, 150px) 24px',
+        padding: 'clamp(120px, 12vw, 160px) 24px',
         background: '#080810',
         position: 'relative',
       }}

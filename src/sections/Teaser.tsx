@@ -6,7 +6,7 @@ export default function Teaser() {
   return (
     <section id="teaser" 
       style={{
-        padding: 'clamp(80px, 12vw, 140px) 24px',
+        padding: 'clamp(160px, 12vw, 240px) 24px',
         position: 'relative',
         overflow: 'hidden',
         textAlign: 'center',
@@ -26,7 +26,7 @@ export default function Teaser() {
       <div style={{
         position: 'absolute',
         inset: 0,
-        background: 'rgba(8,8,16,0.7)',
+        background: 'rgba(8,8,16,0.3)',
         zIndex: 1,
       }} />
 
