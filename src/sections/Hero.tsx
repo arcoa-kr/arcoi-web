@@ -110,7 +110,7 @@ export default function Hero() {
         <h1 className="fade-in" 
           style={{
             fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
-            fontSize: 'clamp(40px, 4.5vw, 55px)',
+            fontSize: 'clamp(42px, 4.5vw, 58px)',
             fontWeight: 600,
             lineHeight: 1.4,
             letterSpacing: '-0.03em',
@@ -120,7 +120,7 @@ export default function Hero() {
           }}
         >
           하루 한 장,
-          <p style={{ fontSize:'clamp(43px, 4.7vw, 60px)' }}>타로 일기</p>
+          <p style={{ fontSize:'clamp(45px, 4.7vw, 60.5px)' }}>타로 일기</p>
         </h1>
 
         <p className="fade-in" 
