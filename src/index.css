@@ -73,23 +73,24 @@ body {
 
 .btn-outline {
   background: transparent;
-  border: 1.5px solid rgba(244, 167, 187, 0.45);
+  border: 1.5px solid rgba(253, 222, 202, 0.6);
   border-radius: 50px;
   padding: 13px 32px;
   font-family: 'Pretendard Variable', sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  color: #F4A7BB;
+  font-size: 16px;
+  font-weight: 400;
+  color: #FDCADE;
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
   display: inline-block;
-  letter-spacing: -0.2px;
 }
 .btn-outline:hover {
-  background: rgba(244, 167, 187, 0.1);
-  border-color: #F4A7BB;
-  transform: translateY(-2px);
+  background: linear-gradient(90deg, #C4A0FF, #FDCADE);
+  border-color: transparent;
+  font-weight: 500;
+  color: #1B2848;
+  transform: translateY(-1px);
 }
 
 /* Scroll arrow */

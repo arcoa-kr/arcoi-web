@@ -81,9 +81,9 @@ export default function Characters() {
         }}
       />
 
-      <div style={{ position: 'relative', zIndex: 1, maxWidth: '1000px', margin: '0 auto', padding: '0 24px' }}>
+      <div style={{ position: 'relative', zIndex: 1, maxWidth: '1080px', margin: '0 auto', padding: '0 24px' }}>
         {/* 제목 */}
-        <div className="fade-in" style={{ textAlign: 'center', marginBottom: 'clamp(32px, 5vw, 48px)' }}>
+        <div className="fade-in" style={{ textAlign: 'center', marginBottom: 'clamp(32px, 5vw, 40px)' }}>
         <SectionChip label="Tarot Masters" />
           <h2 style={{
             fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",

@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: '어디서 사용할 수 있나요?',
-    a: '현재 앱인토스 미니앱에서 [ <b style="color:#ffffff">아르코이: 타로 일기</b> ]를 검색하면 설치와 회원가입 없이 바로 사용할 수 있어요. <br />미니앱에서 타로 마스터 루나를 먼저 경험해 볼 수 있으며, <br />2026년 여름. 각 스토어에 정식 출시 예정입니다.',
+    a: '현재 앱인토스 미니앱에서 [ <b style="color:#ffffff">아르코이: 타로 일기</b> ]를 검색하면 설치와 회원가입 없이 바로 사용할 수 있어요. <br />미니앱에서 타로 마스터 루나를 먼저 경험해 볼 수 있으며, <br />2026년 8월. 각 스토어에 정식 출시 예정입니다.',
   },
 ]
 
@@ -43,7 +43,7 @@ export default function FAQ() {
     >
       <div style={{ maxWidth: '700px', margin: '0 auto' }}>
         {/* 제목 */}
-        <div className="fade-in" style={{ textAlign: 'center', marginBottom: 'clamp(40px, 6vw, 60px)' }}>
+        <div className="fade-in" style={{ textAlign: 'center', marginBottom: 'clamp(32px, 6vw, 48px)' }}>
         <SectionChip label="FAQ" />
           <h2 style={{
             fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
@@ -68,7 +68,7 @@ export default function FAQ() {
                   onClick={() => setOpenIdx(isOpen ? null : i)}
                   style={{
                     width: '100%',
-                    padding: '24px 0',
+                    padding: '20px 0',
                     background: 'none',
                     border: 'none',
                     cursor: 'pointer',
@@ -109,7 +109,7 @@ export default function FAQ() {
                   color: 'rgba(240,238,255,0.7)',
                   lineHeight: 1.7,
                   letterSpacing: '-0.01em',
-                  padding: '0 0 36px 0',
+                  padding: '0 0 28px 0',
                 }} dangerouslySetInnerHTML={{ __html: faq.a }} />
                 </div>
               </div>

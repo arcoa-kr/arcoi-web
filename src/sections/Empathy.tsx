@@ -61,13 +61,13 @@ export default function Empathy() {
     >
       <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
         {/* 제목 */}
-        <div className="fade-in" style={{ textAlign: 'center', marginBottom: isMobile ? '28px' : 'clamp(32px, 5vw, 48px)' }}>
+        <div className="fade-in" style={{ textAlign: 'center', marginBottom: isMobile ? '32px' : 'clamp(32px, 5vw, 64px)' }}>
           <SectionChip label="Why arcoi" />
           <h2 style={{
             fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
             fontSize: 'clamp(26px,4vw,38px)', fontWeight: 700,
             letterSpacing: '-0.03em', color: '#F0EEFF', margin: 0,
-          }}>이런 날 있지 않나요?</h2>
+          }}>오늘의 나를 만나요</h2>
         </div>
 
           {/* 카드 3장 */}

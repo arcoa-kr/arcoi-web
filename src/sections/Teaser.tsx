@@ -1,5 +1,4 @@
 import StoreButtons from '../components/StoreButtons'
-import StibeeForm from '../components/StibeeForm'
 import SectionChip from '../components/SectionChip'
 import useIsMobile from '../hooks/useIsMobile'
 
@@ -61,7 +60,7 @@ export default function Teaser() {
         >
           아르코이의 이야기는<br />
           <span style={{
-            background: 'linear-gradient(90deg, #C4A0FF, #F4A7BB)',
+            background: 'linear-gradient(90deg, #C4A0FF, #FDCADE)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
           }}>
@@ -75,41 +74,42 @@ export default function Teaser() {
           style={{
             fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
             fontSize: 'clamp(14px, 2vw, 17px)',
-            fontWeight: 400,
-            color: 'rgba(240,238,255,0.55)',
+            fontWeight: 300,
+            color: '#DAD0EF',
             letterSpacing: '-0.01em',
-            marginBottom: '48px',
-            lineHeight: 1.7,
+            margin: '33px 0 20px',
+            lineHeight: 1.65,
           }}
         >
-          2026년 여름, arcoi가 찾아갑니다.<br />
-          5명의 마스터와 함께하는 더 넓은 세계를 기대해 주세요.
+          2026년 여름, 정식으로 만나요.<br />
+          5명의 마스터와 함께하는 더 넓은 세계를 기다려 주세요.
         </p>
 
-        {/* CTA */}
+        {/* 스토어 버튼 */}
+        <div style={{ 
+          display: 'flex',
+          justifyContent: 'center',
+          marginBottom: '48px',
+          }}
+        >
+          <StoreButtons />
+        </div>
+
+        {/* 메인 CTA — 월페이퍼 */}
         <div
           className="fade-in"
           style={{
-            display: 'flex',
-            flexDirection: isMobile ? 'column' : 'row',
-            alignItems: 'center',
-            gap: '14px',
             justifyContent: 'center',
-            marginBottom: '32px',
+            marginBottom: '28px',
           }}
         >
           <a href="https://arcoa.kr/wallpaper" className="btn-outline" target="_blank" rel="noopener noreferrer">
-            월페이퍼 받으러 가기
+            월페이퍼 둘러보기
           </a>
-          <StibeeForm />
         </div>
 
-        <div style={{ 
-          display: 'flex',
-          justifyContent: 'center', }}>
-          <StoreButtons />
-        </div>
       </div>
     </section>
+
   )
 }
