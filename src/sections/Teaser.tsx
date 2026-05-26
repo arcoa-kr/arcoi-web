@@ -18,7 +18,7 @@ export default function Teaser() {
       <div style={{
         position: 'absolute',
         inset: 0,
-        backgroundImage: 'url(/teaser-bg.png)',
+        backgroundImage: 'url(/teaser-bg.webp)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         zIndex: 0,
