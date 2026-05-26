@@ -11,7 +11,7 @@ export default function SectionChip({ label }: { label: string }) {
         color: '#FDCADE',
         border: '1px solid rgba(253,202,222,0.5)',
         borderRadius: '50px',
-        padding: '4px 12px',
+        padding: '4px 15px',
         marginBottom: '24px'
       }}>{label}</span>
     )

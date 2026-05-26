@@ -84,142 +84,142 @@ export default function Characters() {
       <div style={{ position: 'relative', zIndex: 1, maxWidth: '1000px', margin: '0 auto', padding: '0 24px' }}>
         {/* 제목 */}
         <div className="fade-in" style={{ textAlign: 'center', marginBottom: 'clamp(32px, 5vw, 48px)' }}>
-        <SectionChip label="Characters" />
+        <SectionChip label="Tarot Masters" />
           <h2 style={{
             fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
             fontSize: 'clamp(26px,4vw,38px)', fontWeight: 800,
             letterSpacing: '-0.03em', color: '#F0EEFF', margin: 0,
-          }}>arcoi의 세계</h2>
+          }}>아르코이의 마스터</h2>
         </div>
 
-{/* 카드 캐러셀 */}
-<div style={{
-  position: 'relative',
-  height: 'clamp(320px, 45vw, 480px)',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}}>
-{masters.map((char, i) => {
-  // 순환 offset 계산 — 항상 중앙 기준
-  let offset = i - activeIdx
-  const half = Math.floor(masters.length / 2)
-  if (offset > half) offset -= masters.length
-  if (offset < -half) offset += masters.length
-
-  const absOffset = Math.abs(offset)
-  const scale = absOffset === 0 ? 1 : absOffset === 1 ? 0.75 : 0.55
-  const opacity = absOffset === 0 ? 1 : absOffset === 1 ? 0.7 : 0.4
-  const zIndex = 5 - absOffset
-  const x = offset * (isMobile ? 18 : 11)
-
-    return (
-      <div
-        key={char.name}
-        onClick={() => setActiveIdx(i)}
-        style={{
-          position: 'absolute',
-          left: '50%',
-          top: '50%',
-          transform: `translate(calc(-50% + ${x}vw), -50%) scale(${scale})`,
-          width: `${baseW}px`,
-          height: `${baseW * 1.5}px`,
-          opacity,
-          zIndex,
-          cursor: 'pointer',
-          transition: 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)',
-        }}
-      >
-        {/* 카드 내부는 기존 그대로 유지 */}
+        {/* 캐러셀 */}
         <div style={{
-          width: '100%',
-          height: '100%',
-          borderRadius: '16px',
-          overflow: 'hidden',
-          border: absOffset === 0
-            ? `2px solid ${char.color}70`
-            : '1px solid rgba(124,91,240,0.15)',
-          boxShadow: absOffset === 0
-            ? `0 0 40px ${char.color}30, 0 16px 48px rgba(0,0,0,0.5)`
-            : '0 4px 16px rgba(0,0,0,0.3)',
           position: 'relative',
-          transition: 'all 0.6s ease',
+          height: 'clamp(320px, 45vw, 480px)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}>
-          <img
-            src={char.img}
-            alt={char.nameKo}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              objectPosition: 'center top',
-              filter: char.locked
-                ? 'brightness(0.15) saturate(0)'
-                : absOffset === 0
-                  ? 'brightness(1.05)'
-                  : 'brightness(0.5) saturate(0.6)',
-              transition: 'filter 0.6s ease',
-            }}
-          />
-          <div style={{
-            position: 'absolute',
-            bottom: 0, left: 0, right: 0,
-            height: '45%',
-            background: 'linear-gradient(to top, rgba(13,11,30,0.9), transparent)',
-          }} />
-          {char.locked && (
-            <div style={{
-              position: 'absolute',
-              top: '50%', left: '50%',
-              transform: 'translate(-50%, -50%)',
-              fontSize: '24px',
-              opacity: 0.5,
-            }}>🔒</div>
-          )}
-          <div style={{
-            position: 'absolute',
-            bottom: '12px', left: 0, right: 0,
-            textAlign: 'center',
-          }}>
-            <p style={{
-              fontFamily: "'Poppins', sans-serif",
-              fontSize: '9px', fontWeight: 500,
-              letterSpacing: '0.15em',
-              color: char.locked ? 'rgba(255,255,255,0.2)' : char.color,
-              textTransform: 'uppercase',
-              marginBottom: '2px',
-            }}>{char.name}</p>
-            <p style={{
-              fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
-              fontSize: '14px', fontWeight: 700,
-              color: char.locked ? 'rgba(255,255,255,0.15)' : '#F0EEFF',
-            }}>{char.locked ? '???' : char.nameKo}</p>
-          </div>
-          {char.cats && (
-            <div style={{
-              position: 'absolute',
-              bottom: '52px', left: 0, right: 0,
-              display: 'flex', gap: '4px',
-              justifyContent: 'center',
-            }}>
-              {char.cats.map((cat, j) => (
-                <div key={j} style={{
-                  width: '22px', height: '22px',
-                  borderRadius: '50%', overflow: 'hidden',
-                  border: '1.5px solid rgba(244,167,187,0.4)',
+        {masters.map((char, i) => {
+          // 순환 offset 계산 — 항상 중앙 기준
+          let offset = i - activeIdx
+          const half = Math.floor(masters.length / 2)
+          if (offset > half) offset -= masters.length
+          if (offset < -half) offset += masters.length
+
+          const absOffset = Math.abs(offset)
+          const scale = absOffset === 0 ? 1 : absOffset === 1 ? 0.75 : 0.55
+          const opacity = absOffset === 0 ? 1 : absOffset === 1 ? 0.7 : 0.4
+          const zIndex = 5 - absOffset
+          const x = offset * (isMobile ? 18 : 11)
+
+            return (
+              <div
+                key={char.name}
+                onClick={() => setActiveIdx(i)}
+                style={{
+                  position: 'absolute',
+                  left: '50%',
+                  top: '50%',
+                  transform: `translate(calc(-50% + ${x}vw), -50%) scale(${scale})`,
+                  width: `${baseW}px`,
+                  height: `${baseW * 1.65}px`,
+                  opacity,
+                  zIndex,
+                  cursor: 'pointer',
+                  transition: 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)',
+                }}
+              >
+                {/* 카드 내부는 기존 그대로 유지 */}
+                <div style={{
+                  width: '100%',
+                  height: '100%',
+                  borderRadius: '16px',
+                  overflow: 'hidden',
+                  border: absOffset === 0
+                    ? `2px solid ${char.color}70`
+                    : '1px solid rgba(124,91,240,0.15)',
+                  boxShadow: absOffset === 0
+                    ? `0 0 40px ${char.color}30, 0 16px 48px rgba(0,0,0,0.5)`
+                    : '0 4px 16px rgba(0,0,0,0.3)',
+                  position: 'relative',
+                  transition: 'all 0.6s ease',
                 }}>
-                  <img src={cat.img} alt={cat.name}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  <img
+                    src={char.img}
+                    alt={char.nameKo}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center top',
+                      filter: char.locked
+                        ? 'brightness(0.15) saturate(0)'
+                        : absOffset === 0
+                          ? 'brightness(1.05)'
+                          : 'brightness(0.5) saturate(0.6)',
+                      transition: 'filter 0.6s ease',
+                    }}
                   />
+                  <div style={{
+                    position: 'absolute',
+                    bottom: 0, left: 0, right: 0,
+                    height: '45%',
+                    background: 'linear-gradient(to top, rgba(13,11,30,0.9), transparent)',
+                  }} />
+                  {char.locked && (
+                    <div style={{
+                      position: 'absolute',
+                      top: '50%', left: '50%',
+                      transform: 'translate(-50%, -50%)',
+                      fontSize: '24px',
+                      opacity: 0.5,
+                    }}>🔒</div>
+                  )}
+                  <div style={{
+                    position: 'absolute',
+                    bottom: '12px', left: 0, right: 0,
+                    textAlign: 'center',
+                  }}>
+                    <p style={{
+                      fontFamily: "'Poppins', sans-serif",
+                      fontSize: '9px', fontWeight: 500,
+                      letterSpacing: '0.15em',
+                      color: char.locked ? 'rgba(255,255,255,0.2)' : char.color,
+                      textTransform: 'uppercase',
+                      marginBottom: '2px',
+                    }}>{char.name}</p>
+                    <p style={{
+                      fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
+                      fontSize: '14px', fontWeight: 700,
+                      color: char.locked ? 'rgba(255,255,255,0.15)' : '#F0EEFF',
+                    }}>{char.locked ? '???' : char.nameKo}</p>
+                  </div>
+                  {char.cats && (
+                    <div style={{
+                      position: 'absolute',
+                      bottom: '52px', left: 0, right: 0,
+                      display: 'flex', gap: '4px',
+                      justifyContent: 'center',
+                    }}>
+                      {char.cats.map((cat, j) => (
+                        <div key={j} style={{
+                          width: '22px', height: '22px',
+                          borderRadius: '50%', overflow: 'hidden',
+                          border: '1.5px solid rgba(244,167,187,0.4)',
+                        }}>
+                          <img src={cat.img} alt={cat.name}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </div>
-              ))}
-            </div>
-          )}
+              </div>
+            )
+          })}
         </div>
-      </div>
-    )
-  })}
-</div>
 
         {/* 선택된 캐릭터 정보 */}
         <div style={{
