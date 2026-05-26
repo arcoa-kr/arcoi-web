@@ -4,11 +4,11 @@ import SectionChip from '../components/SectionChip'
 import StoreButtons from '../components/StoreButtons'
 
 const steps = [
-  { num: '01', title: '마음계절을 골라요', desc: '오늘 나는 봄, 여름, 가을, 겨울?\n지금 내 마음의 온도를 계절로 표현해요.', img: '/step-1.webp' },
-  { num: '02', title: '리딩 방법을 선택해요', desc: '나의 타로카드와 스마트폰 중에서\n리딩 방법을 선택합니다.', img: '/step-2.webp' },
-  { num: '03', title: '고양이 타로 1장을 뽑아요', desc: '실물 카드 사용 시 명상 타이머를 제공합니다.\n마음을 가라앉히고 천천히 뽑아요.', img: '/step-3.webp' },
-  { num: '04', title: '루나의 해설과 함께 짧은 일기를 써요', desc: '부담 없이, 가볍게.\n한 줄도 괜찮아요.', img: '/step-4.webp' },
-  { num: '05', title: '6시간 뒤, 회고 타로로 돌아봐요', desc: '오늘의 감정 변화를 다시 한번.\n하루의 흐름을 부드럽게 정리해요.', img: '/step-5.webp' },
+  { num: '01', title: '마음계절을 골라요.', desc: '오늘 나는 봄, 여름, 가을, 겨울?\n지금 내 마음의 온도를 계절로 선택해요.', img: '/step-1.webp' },
+  { num: '02', title: '리딩 방법을 선택해요.', desc: '나의 타로카드와 스마트폰 중에서\n선호하는 방법을 선택합니다.', img: '/step-2.webp' },
+  { num: '03', title: '타로카드 1장을 선택해요.', desc: '실물 카드 사용 시 명상 타이머가 제공돼요.\n마음을 가라앉히고 한 장을 선택합니다.', img: '/step-3.webp' },
+  { num: '04', title: '루나의 해설과 일기를 공유할 수 있어요.', desc: '일기는 24시에 초기화 되어서 부담없어요.\n해설 공유하기를 통해 개인 소장해 보세요.', img: '/step-4.webp' },
+  { num: '05', title: '회고 타로를 통해 하루를 돌아봐요.', desc: '6시간 뒤, 하루를 돌아보는 타로가 가능해요.\n오늘 하루도 정말 수고 많았어요.', img: '/step-5.webp' },
 ]
 
 export default function HowItWorks() {
@@ -83,8 +83,8 @@ export default function HowItWorks() {
                 width: activeStep === i ? '28px' : '8px',
                 height: '8px', borderRadius: '4px',
                 background: activeStep === i
-                  ? 'linear-gradient(90deg, #7C5BF0, #F4A7BB)'
-                  : 'rgba(124,91,240,0.2)',
+                  ? 'linear-gradient(90deg, #7C5BF0, #FDCADE)'
+                  : 'rgba(124,91,240,0.33)',
                 transition: 'all 0.4s ease',
                 cursor: 'pointer',
               }} />
@@ -115,10 +115,8 @@ export default function HowItWorks() {
           <div style={{ textAlign: 'center' }}>
             <div style={{
               fontFamily: "'Poppins', sans-serif",
-              fontSize: '40px', fontWeight: 700,
-              background: 'linear-gradient(135deg, #7C5BF0, #F4A7BB)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              fontSize: '40px', fontWeight: 600,
+              color: '#7C5BF0',
               lineHeight: 1, marginBottom: '12px',
             }}>{steps[activeStep].num}</div>
             <h3 style={{
@@ -204,7 +202,7 @@ export default function HowItWorks() {
             <SectionChip label="How it works" />
             <h2 style={{
               fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
-              fontSize: 'clamp(26px,4vw,38px)', fontWeight: 700,
+              fontSize: 'clamp(26px,4vw,38px)', fontWeight: 600,
               letterSpacing: '-0.03em', color: '#F0EEFF',
               marginBottom: 'clamp(32px, 5vw, 48px)',
             }}>이렇게 사용해요</h2>
@@ -215,8 +213,8 @@ export default function HowItWorks() {
                   width: activeStep === i ? '32px' : '8px',
                   height: '8px', borderRadius: '4px',
                   background: activeStep === i
-                    ? 'linear-gradient(90deg, #7C5BF0, #F4A7BB)'
-                    : 'rgba(124,91,240,0.2)',
+                    ? 'linear-gradient(90deg, #7C5BF0, #FDCADE)'
+                    : 'rgba(124,91,240,0.33)',
                   transition: 'all 0.4s ease',
                 }} />
               ))}
@@ -224,10 +222,8 @@ export default function HowItWorks() {
 
             <div style={{
               fontFamily: "'Poppins', sans-serif",
-              fontSize: 'clamp(48px, 8vw, 72px)', fontWeight: 700,
-              background: 'linear-gradient(135deg, #7C5BF0, #F4A7BB)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
+              fontSize: 'clamp(48px, 8vw, 72px)', fontWeight: 600,
+              color: '#7C5BF0',
               lineHeight: 1, marginBottom: '16px',
             }}>{steps[activeStep].num}</div>
 
@@ -243,7 +239,7 @@ export default function HowItWorks() {
                 }}>
                   <h3 style={{
                     fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
-                    fontSize: 'clamp(18px, 2.5vw, 24px)', fontWeight: 700,
+                    fontSize: 'clamp(18px, 2.5vw, 24px)', fontWeight: 600,
                     color: '#F0EEFF', letterSpacing: '-0.02em', marginBottom: '12px',
                   }}>{step.title}</h3>
                   <p style={{
