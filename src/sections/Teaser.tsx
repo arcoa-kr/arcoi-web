@@ -1,12 +1,15 @@
 import StoreButtons from '../components/StoreButtons'
 import StibeeForm from '../components/StibeeForm'
 import SectionChip from '../components/SectionChip'
+import useIsMobile from '../hooks/useIsMobile'
 
 export default function Teaser() {
+  const isMobile = useIsMobile()
+
   return (
     <section id="teaser" 
       style={{
-        padding: 'clamp(160px, 12vw, 240px) 24px',
+        padding: isMobile ? '120px 24px' : 'clamp(160px, 12vw, 240px) 24px',
         position: 'relative',
         overflow: 'hidden',
         textAlign: 'center',
@@ -65,7 +68,7 @@ export default function Teaser() {
             marginBottom: '16px',
           }}
         >
-          arcoi의 이야기는<br />
+          아르코이의 이야기는<br />
           <span style={{
             background: 'linear-gradient(90deg, #C4A0FF, #F4A7BB)',
             WebkitBackgroundClip: 'text',
@@ -89,7 +92,7 @@ export default function Teaser() {
           }}
         >
           2026년 여름, arcoi가 찾아갑니다.<br />
-          5명의 마스터와 함께하는 더 넓은 세계를 기다려주세요.
+          5명의 마스터와 함께하는 더 넓은 세계를 기대해 주세요.
         </p>
 
         {/* CTA */}
@@ -97,7 +100,8 @@ export default function Teaser() {
           className="fade-in"
           style={{
             display: 'flex',
-            flexWrap: 'wrap',
+            flexDirection: isMobile ? 'column' : 'row',
+            alignItems: 'center',
             gap: '14px',
             justifyContent: 'center',
             marginBottom: '32px',

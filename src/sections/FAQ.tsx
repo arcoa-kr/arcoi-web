@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import SectionChip from '../components/SectionChip'
+import useIsMobile from '../hooks/useIsMobile'
 
 const faqs = [
   {
@@ -30,22 +31,23 @@ const faqs = [
 
 export default function FAQ() {
   const [openIdx, setOpenIdx] = useState<number | null>(null)
+  const isMobile = useIsMobile()
 
   return (
     <section id="faq" 
       style={{
-        padding: 'clamp(120px, 12vw, 160px) 24px',
+        padding: isMobile ? '60px 24x' : 'clamp(120px, 12vw, 160px) 24px',
         background: '#080810',
         position: 'relative',
       }}
     >
-      <div style={{ maxWidth: '720px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '700px', margin: '0 auto' }}>
         {/* 제목 */}
         <div className="fade-in" style={{ textAlign: 'center', marginBottom: 'clamp(40px, 6vw, 60px)' }}>
         <SectionChip label="FAQ" />
           <h2 style={{
             fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
-            fontSize: 'clamp(26px,4vw,38px)', fontWeight: 800,
+            fontSize: 'clamp(26px,4vw,38px)', fontWeight: 700,
             letterSpacing: '-0.03em', color: '#F0EEFF', margin: 0,
           }}>자주 묻는 질문</h2>
         </div>
@@ -59,7 +61,7 @@ export default function FAQ() {
               <div
                 key={i}
                 style={{
-                  borderBottom: '1px solid rgba(240,238,255,0.08)',
+                  borderBottom: '1px solid rgba(240,238,255,0.1)',
                 }}
               >
                 <button
@@ -78,15 +80,15 @@ export default function FAQ() {
                 >
                   <span style={{
                     fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
-                    fontSize: 'clamp(15px, 2vw, 17px)',
-                    fontWeight: 600,
+                    fontSize: 'clamp(16px, 2vw, 18px)',
+                    fontWeight: 500,
                     color: isOpen ? '#F4A7BB' : '#F0EEFF',
                     textAlign: 'left',
-                    letterSpacing: '-0.02em',
+                    letterSpacing: '-0.01em',
                     transition: 'color 0.3s ease',
                   }}>{faq.q}</span>
                   <span style={{
-                    fontSize: '20px',
+                    fontSize: '28px',
                     color: isOpen ? '#F4A7BB' : 'rgba(240,238,255,0.3)',
                     transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
                     transition: 'all 0.3s ease',
@@ -102,12 +104,12 @@ export default function FAQ() {
                 }}>
                   <p style={{
                     fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
-                    fontSize: 'clamp(13px, 1.6vw, 15px)',
+                    fontSize: 'clamp(15px, 1.6vw, 16px)',
                     fontWeight: 400,
                     color: 'rgba(240,238,255,0.55)',
                     lineHeight: 1.7,
                     letterSpacing: '-0.01em',
-                    padding: '0 0 24px 0',
+                    padding: '0 24px 24px 0',
                   }}>{faq.a}</p>
                 </div>
               </div>

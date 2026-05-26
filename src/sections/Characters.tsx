@@ -87,7 +87,7 @@ export default function Characters() {
         <SectionChip label="Tarot Masters" />
           <h2 style={{
             fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
-            fontSize: 'clamp(26px,4vw,38px)', fontWeight: 800,
+            fontSize: 'clamp(26px,4vw,38px)', fontWeight: 700,
             letterSpacing: '-0.03em', color: '#F0EEFF', margin: 0,
           }}>아르코이의 마스터</h2>
         </div>

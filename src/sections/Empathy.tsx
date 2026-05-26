@@ -46,8 +46,7 @@ export default function Empathy() {
           <SectionChip label="Why arcoi" />
           <h2 style={{
             fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
-            fontSize: isMobile ? '26px' : 'clamp(26px,4vw,38px)',
-            fontWeight: 700,
+            fontSize: 'clamp(26px,4vw,38px)', fontWeight: 700,
             letterSpacing: '-0.03em', color: '#F0EEFF', margin: 0,
           }}>이런 날 있지 않나요?</h2>
         </div>

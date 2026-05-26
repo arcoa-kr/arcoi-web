@@ -72,7 +72,7 @@ export default function HowItWorks() {
           <SectionChip label="How it works" />
           <h2 style={{
             fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
-            fontSize: '26px', fontWeight: 800,
+            fontSize: 'clamp(26px,4vw,38px)', fontWeight: 700,
             letterSpacing: '-0.03em', color: '#F0EEFF',
             marginBottom: '24px',
           }}>이렇게 사용해요</h2>
@@ -204,7 +204,7 @@ export default function HowItWorks() {
             <SectionChip label="How it works" />
             <h2 style={{
               fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
-              fontSize: 'clamp(26px,4vw,38px)', fontWeight: 800,
+              fontSize: 'clamp(26px,4vw,38px)', fontWeight: 700,
               letterSpacing: '-0.03em', color: '#F0EEFF',
               marginBottom: 'clamp(32px, 5vw, 48px)',
             }}>이렇게 사용해요</h2>
