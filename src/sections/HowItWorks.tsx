@@ -255,9 +255,7 @@ export default function HowItWorks() {
                 </div> 
               ))}
             </div>
-            <p className='mt-8'>
-            <StoreButtons />
-            </p>
+            <div className='mt-8'><StoreButtons /></div>
           </div>
         </div>
       </div>

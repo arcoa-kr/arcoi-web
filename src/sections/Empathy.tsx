@@ -58,7 +58,7 @@ export default function Empathy() {
             flexDirection: isMobile ? 'column' : 'row',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: isMobile ? '28px' : 'clamp(16px, 3vw, 32px)',
+            gap: isMobile ? '48px' : 'clamp(48px, 3vw, 56px)',
           }}>
 
           {cards.map((card, i) => {
@@ -77,7 +77,7 @@ export default function Empathy() {
                 <div style={{ perspective: '1000px' }}>
                   <div
                     style={{
-                      width: isMobile ? '55vw' : 'clamp(140px, 22vw, 200px)',
+                      width: isMobile ? '53vw' : 'clamp(200px, 22vw, 240px)',
                       aspectRatio: '2 / 3',
                       position: 'relative',
                       transformStyle: 'preserve-3d',
