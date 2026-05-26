@@ -15,6 +15,8 @@ export default function HowItWorks() {
   const stickyRef = useRef<HTMLDivElement>(null)
   const touchStartX = useRef(0)
   const isMobile = useIsMobile()
+  const mockupRef = useRef<HTMLDivElement>(null)
+  const [mockupH, setMockupH] = useState(0)
 
   useEffect(() => {
     if (isMobile) return
@@ -35,6 +37,13 @@ export default function HowItWorks() {
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [isMobile])
+
+  useEffect(() => {
+    if (mockupRef.current) {
+      setMockupH(mockupRef.current.offsetHeight)
+    }
+  }, [])
+
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX
@@ -129,48 +138,67 @@ export default function HowItWorks() {
     )
   }
 
-  // ── 데스크톱 ──
+  // PC
   return (
     <div
       ref={stickyRef}
-      id="how-it-works" 
+      id="how-it-works"
       style={{
         height: `${steps.length * 60}vh`,
         position: 'relative',
         background: '#1A1A2E',
       }}
     >
-      <div className="fade-in"  style={{
+      <div style={{
         position: 'sticky', top: 0, height: '100vh',
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        overflow: 'hidden',
+        overflow: 'visible',
       }}>
         <div style={{
           maxWidth: '1080px', width: '100%', padding: '0 24px',
           display: 'grid', gridTemplateColumns: '1fr 1fr',
           gap: 'clamp(32px, 5vw, 64px)', alignItems: 'center',
         }}>
-          <div style={{ display: 'flex', justifyContent: 'center' }}>
+
+        {/* 왼쪽: 폰 목업 — 다이얼 */}
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={{ position: 'relative' }}>
+            {/* 이미지 스트립 */}
             <div style={{
-              width: 'clamp(210px, 28vw, 280px)',
-              aspectRatio: '9 / 19', borderRadius: '36px',
-              background: 'linear-gradient(160deg, #2D1B4E, #1A1A2E)',
-              border: '1.5px solid rgba(124,91,240,0.25)',
-              boxShadow: '0 24px 64px rgba(0,0,0,0.5), 0 0 40px rgba(124,91,240,0.15)',
-              overflow: 'hidden', position: 'relative',
+              position: 'absolute',
+              width: '100%',
+              left: 0,
+              top: `${-activeStep * (mockupH + 16)}px`,
+              transition: 'top 0.6s cubic-bezier(0.22, 1, 0.36, 1)',
+              display: 'flex', flexDirection: 'column',
+              gap: '16px', alignItems: 'center',
             }}>
               {steps.map((step, i) => (
                 <img key={i} src={step.img} alt={step.title} style={{
-                  position: 'absolute', top: 0, left: 0,
-                  width: '100%', height: '100%',
-                  objectFit: 'cover', borderRadius: '36px',
-                  opacity: activeStep === i ? 1 : 0,
-                  transition: 'opacity 0.5s ease',
+                  width: '100%',
+                  aspectRatio: '9 / 19',
+                  objectFit: 'cover',
+                  borderRadius: '36px',
+                  opacity: activeStep === i ? 1 : 0.3,
+                  transform: activeStep === i ? 'scale(1)' : 'scale(0.9)',
+                  transition: 'all 0.6s cubic-bezier(0.22, 1, 0.36, 1)',
                 }} />
               ))}
             </div>
+            {/* 목업 프레임 */}
+            <div ref={mockupRef} style={{
+              width: 'clamp(210px, 28vw, 280px)',
+              aspectRatio: '9 / 19',
+              borderRadius: '36px',
+              border: '3px solid rgba(124,91,240,0.25)',
+              boxShadow: '0 24px 64px rgba(0,0,0,0.5), 0 0 40px rgba(124,91,240,0.15)',
+              position: 'relative', zIndex: 2,
+              pointerEvents: 'none',
+            }} />
           </div>
+        </div>
 
+          {/* 오른쪽: 텍스트 */}
           <div className="fade-in">
             <SectionChip label="How it works" />
             <h2 style={{
@@ -231,4 +259,5 @@ export default function HowItWorks() {
       </div>
     </div>
   )
+
 }
