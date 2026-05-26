@@ -81,7 +81,7 @@ export default function Teaser() {
             lineHeight: 1.65,
           }}
         >
-          2026년 여름, 정식으로 만나요.<br />
+          2026년 8월, 정식으로 만나요.<br />
           5명의 마스터와 함께하는 더 넓은 세계를 기다려 주세요.
         </p>
 
