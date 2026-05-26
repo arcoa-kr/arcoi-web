@@ -25,7 +25,7 @@ export default function StibeeForm() {
             display: 'flex',
             alignItems: 'center',
             gap: '4px',
-            width: '288px',
+
             fontFamily: "'Poppins', sans-serif",
           }}
         >
@@ -35,16 +35,16 @@ export default function StibeeForm() {
             placeholder="hello@email.com"
             required
             style={{
-              background: 'rgba(187, 187, 187, 0.33)',
+              background: 'rgba(187, 187, 187, 0.15)',
               border: 'none',
               borderRadius: '50px',
-              padding: '0 16px',
-              fontSize: '16px',
+              padding: '0 15px',
+              fontSize: '15px',
               fontFamily: "'Poppins', sans-serif",
               fontWeight: 400,
               color: '#FFFFFF',
-              width: '196px',
-              height: '52px',
+              width: '210px',
+              height: '44px',
               outline: 'none',
             }}
           />
@@ -57,31 +57,31 @@ export default function StibeeForm() {
               color: '#382A25',
               border: 'none',
               borderRadius: '50px',
-              width: '88px',
-              height: '52px',
-              fontSize: '16px',
+              width: '72px',
+              height: '42px',
+              fontSize: '15px',
               fontFamily: "'Poppins', sans-serif",
-              fontWeight: 400,
+              fontWeight: 500,
               cursor: sending ? 'default' : 'pointer',
               whiteSpace: 'nowrap',
             }}
           >
-            {sending ? '...' : 'Join ✦'}
+            {sending ? '...' : '구독'}
           </button>
         </form>
       ) : (
         <div
           style={{
-            background: 'rgba(187, 187, 187, 0.33)',
+            background: 'rgba(187, 187, 187, 0.2)',
             borderRadius: '50px',
             padding: '0 23px',
-            fontSize: '16px',
+            fontSize: '15px',
             fontFamily: "'Poppins', sans-serif",
             fontWeight: 400,
             color: '#FFFFFF',
-            width: '288px',
-            height: '52px',
-            lineHeight: '52px',
+            width: '286px',
+            height: '44px',
+            lineHeight: '44px',
             textAlign: 'left',
           }}
         >
