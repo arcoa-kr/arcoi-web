@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import useIsMobile from '../hooks/useIsMobile'
 import SectionChip from '../components/SectionChip'
+import StoreButtons from '../components/StoreButtons'
 
 const steps = [
   { num: '01', title: '마음계절을 골라요', desc: '오늘 나는 봄, 여름, 가을, 겨울?\n지금 내 마음의 온도를 계절로 표현해요.', img: '/step-1.webp' },
@@ -251,9 +252,12 @@ export default function HowItWorks() {
                     color: 'rgba(240,238,255,0.55)',
                     lineHeight: 1.65, whiteSpace: 'pre-line',
                   }}>{step.desc}</p>
-                </div>
+                </div> 
               ))}
             </div>
+            <p className='mt-8'>
+            <StoreButtons />
+            </p>
           </div>
         </div>
       </div>
