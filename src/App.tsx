@@ -6,6 +6,7 @@ import Characters from './sections/Characters'
 import FAQ from './sections/FAQ'
 import Teaser from './sections/Teaser'
 import Footer from './sections/Footer'
+import ScrollToTop from './components/ScrollToTop'
 
 function App() {
   useEffect(() => {
@@ -47,6 +48,7 @@ function App() {
       <FAQ />
       <Teaser />
       <Footer />
+      <ScrollToTop />
     </div>
   )
 }
