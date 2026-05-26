@@ -126,18 +126,18 @@ export default function Hero() {
         <p className="fade-in" 
           style={{
             fontFamily: "'Pretendard Variable', 'Pretendard', sans-serif",
-            fontSize: 'clamp(17px, 2vw, 19px)',
-            fontWeight: 200,
+            fontSize: 'clamp(16px, 2vw, 18px)',
+            fontWeight: 300,
             color: '#DAD0EF',
             lineHeight: 'clamp(27px, 2vw, 33px)',
-            marginLeft: '4px',
+            marginLeft: '6px',
             marginBottom: '40px',
             letterSpacing: '-0.01em',
           }}
         >
-          딱히 슬프지 않지만<br />
-          괜찮지도 않은 하루하루 ...<br />
-          타로 한 장이 너의 하루를 알아줄 거야.
+          궁금한 오늘의 나.<br />
+          번거롭지 않게 케어하고 싶을 때<br />
+          타로 한 장이 나의 마음을 알아줘요.
         </p>
 
         <div className="fade-in" 
