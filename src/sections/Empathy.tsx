@@ -3,10 +3,29 @@ import useIsMobile from '../hooks/useIsMobile'
 import SectionChip from '../components/SectionChip'
 
 const cards = [
-  { image: '/tarot-1.webp', name: 'The Moon', situation: '오늘 기분이 어때?', detail: '물으면 멈칫하게 되는 날', answer: '타로가 대신 말해줘요.' },
-  { image: '/tarot-2.webp', name: 'The Hermit', situation: '적어야 할 것 같은데', detail: '뭘 쓸지 모르겠는 날', answer: '한 줄이면 충분해요.' },
-  { image: '/tarot-3.webp', name: 'Temperance', situation: '괜찮은 것 같은데', detail: '계속 밋밋한 날', answer: '마음계절로 돌아봐요.' },
+  {
+    image: '/tarot-1.webp',
+    name: 'The High Priestess',
+    situation: '궁금한 오늘의 나,',
+    detail: '어떤 마음이 좋을지 알고 싶을 때',
+    answer: '비비가 조용히 알려줘요.',
+  },
+  {
+    image: '/tarot-2.webp',
+    name: 'Strength',
+    situation: '대단하지 않아도,',
+    detail: '오늘 하루 잘 버틴 나에게',
+    answer: '코코가 다정하게 응원해요.',
+  },
+  {
+    image: '/tarot-3.webp',
+    name: 'The Hermit',
+    situation: '혼자만의 시간,',
+    detail: '조용히 나를 돌보고 싶을 때',
+    answer: '애쉬가 곁에 있어줘요.',
+  },
 ]
+
 
 export default function Empathy() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -57,7 +76,7 @@ export default function Empathy() {
             flexDirection: isMobile ? 'column' : 'row',
             alignItems: 'center',
             justifyContent: 'center',
-            gap: isMobile ? '48px' : 'clamp(48px, 3vw, 56px)',
+            gap: isMobile ? '48px' : 'clamp(55px, 3vw, 60px)',
           }}>
 
           {cards.map((card, i) => {
@@ -111,52 +130,56 @@ export default function Empathy() {
                       <img src={card.image} alt={card.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
 
-                    {/* 앞면 = 텍스트 */}
+                  {/* 앞면 = 텍스트 */}
+                  <div style={{
+                    position: 'absolute', inset: 0,
+                    backfaceVisibility: 'hidden',
+                    transform: 'rotateY(180deg)',
+                    borderRadius: isMobile ? '12px' : '16px',
+                    padding: isMobile ? '12px 36px' : 'clamp(20px,3vw,40px) clamp(16px,2vw,40px)',
+                    display: 'flex', flexDirection: 'column',
+                    justifyContent: 'center', alignItems: 'center', textAlign: 'center',
+                    backgroundImage: `url(${card.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    overflow: 'hidden',
+                  }}>
+                    {/* 어두운 오버레이 — 텍스트 가독성 */}
                     <div style={{
                       position: 'absolute', inset: 0,
-                      backfaceVisibility: 'hidden',
-                      transform: 'rotateY(180deg)',
+                      background: 'rgba(10,10,20,0.8)',
                       borderRadius: isMobile ? '8px' : '12px',
-                      padding: isMobile ? '12px 8px' : 'clamp(20px,3vw,32px) clamp(16px,2vw,24px)',
-                      display: 'flex', flexDirection: 'column',
-                      justifyContent: 'center', alignItems: 'center', textAlign: 'center',
-                      background: 'linear-gradient(135deg, rgba(124,91,240,0.15), rgba(244,167,187,0.1))',
-                      border: '1px solid rgba(124,91,240,0.2)',
-                      boxShadow: '0 8px 32px rgba(0,0,0,0.4), 0 0 20px rgba(124,91,240,0.1)',
-                      backdropFilter: 'blur(12px)',
-                    }}>
-                      <p style={{
-                        fontFamily: "'Poppins', sans-serif",
-                        fontSize: isMobile ? '8px' : 'clamp(10px,1.4vw,12px)',
-                        fontWeight: 500, letterSpacing: '0.12em',
-                        color: 'rgba(196,160,255,0.6)',
-                        textTransform: 'uppercase',
-                        marginBottom: isMobile ? '8px' : '16px',
-                      }}>{card.name}</p>
+                    }} />
+
+                    {/* 텍스트 — zIndex 올리기 */}
+                    <div style={{ position: 'relative', zIndex: 1 }}>
                       <p style={{
                         fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
-                        fontSize: isMobile ? '11px' : 'clamp(14px,1.8vw,17px)',
-                        fontWeight: 600, color: '#F0EEFF',
+                        fontSize: isMobile ? '16px' : 'clamp(16px,1.8vw,18px)',
+                        fontWeight: 500, color: '#F0EEFF',
                         lineHeight: 1.5, letterSpacing: '-0.02em',
                         marginBottom: isMobile ? '12px' : '20px',
                       }}>
-                        "{card.situation}<br />{card.detail}"
+                        {card.situation}<br />{card.detail}
                       </p>
                       <div style={{
-                        width: isMobile ? '20px' : '32px',
+                        width: isMobile ? '21px' : '28px',
                         height: '1.5px',
-                        background: 'linear-gradient(90deg,#7C5BF0,#F4A7BB)',
+                        background: '#7C5BF0',
                         borderRadius: '2px',
                         marginBottom: isMobile ? '8px' : '16px',
+                        margin: '28px auto 36px',
                       }} />
                       <p style={{
                         fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
-                        fontSize: isMobile ? '10px' : 'clamp(13px,1.6vw,15px)',
+                        fontSize: isMobile ? '15px' : 'clamp(15px,1.6vw,16px)',
                         fontWeight: 400, color: '#F4A7BB',
                         letterSpacing: '-0.01em',
+                        marginTop: isMobile ? '8px' : '16px',
                       }}>{card.answer}</p>
                     </div>
                   </div>
+                </div>
                 </div>
               </div>
             )
