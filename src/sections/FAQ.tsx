@@ -37,7 +37,7 @@ export default function FAQ() {
     <section id="faq" 
       style={{
         padding: isMobile ? '60px 24x' : 'clamp(120px, 12vw, 160px) 24px',
-        background: '#101520',
+        background: '#161923',
         position: 'relative',
       }}
     >

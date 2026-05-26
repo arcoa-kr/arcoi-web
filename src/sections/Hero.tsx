@@ -57,7 +57,7 @@ export default function Hero() {
         style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(to right, rgba(13,11,30,0.7) 0%, rgba(13,11,30,0.3) 35%, transparent 55%)',
+          background: 'linear-gradient(to right, rgba(13,11,30,0.1) 0%, rgba(13,11,30,0.1) 35%, transparent 55%)',
           zIndex: 1,
         }}
       />
@@ -69,8 +69,8 @@ export default function Hero() {
           bottom: 0,
           left: 0,
           right: 0,
-          height: '100px',
-          background: 'linear-gradient(to bottom, transparent, #1A1A2E)',
+          height: '80px',
+          background: 'linear-gradient(to bottom, transparent, #24213C)',
           zIndex: 2,
         }}
       />

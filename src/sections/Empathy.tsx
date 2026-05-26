@@ -55,7 +55,7 @@ export default function Empathy() {
       id="empathy"
       style={{
         padding: isMobile ? '120px 16px' : 'clamp(120px, 10vw, 240px) 24px',
-        background: 'linear-gradient(180deg, #201A2E 0%, #0C0F1D 100%)',
+        background: '#211E38',
         overflow: 'hidden',
       }}
     >
@@ -136,7 +136,7 @@ export default function Empathy() {
                     backfaceVisibility: 'hidden',
                     transform: 'rotateY(180deg)',
                     borderRadius: isMobile ? '12px' : '16px',
-                    padding: isMobile ? '12px 36px' : 'clamp(20px,3vw,40px) clamp(16px,2vw,40px)',
+                    padding: isMobile ? '12px 30px' : 'clamp(20px,3vw,30px) clamp(16px,2vw,30px)',
                     display: 'flex', flexDirection: 'column',
                     justifyContent: 'center', alignItems: 'center', textAlign: 'center',
                     backgroundImage: `url(${card.image})`,

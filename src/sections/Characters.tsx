@@ -65,7 +65,7 @@ export default function Characters() {
       id="characters" 
       style={{
         padding: 'clamp(120px, 10vw, 240px) 0',
-        background: '#0A0A0A',
+        background: '#111111',
         position: 'relative',
         overflow: 'hidden',
       }}

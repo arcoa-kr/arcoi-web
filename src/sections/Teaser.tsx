@@ -29,7 +29,7 @@ export default function Teaser() {
       <div style={{
         position: 'absolute',
         inset: 0,
-        background: 'rgba(8,8,16,0.15)',
+        background: 'rgba(8,8,16,0.33)',
         zIndex: 1,
       }} />
 
@@ -38,16 +38,7 @@ export default function Teaser() {
         position: 'absolute',
         top: 0, left: 0, right: 0,
         height: '120px',
-        background: 'linear-gradient(to bottom, #101520, transparent)',
-        zIndex: 2,
-      }} />
-
-      {/* 하단 페이드 */}
-      <div style={{
-        position: 'absolute',
-        bottom: 0, left: 0, right: 0,
-        height: '120px',
-        background: 'linear-gradient(to top, #121212, transparent)',
+        background: 'linear-gradient(to bottom, #161923, transparent)',
         zIndex: 2,
       }} />
 

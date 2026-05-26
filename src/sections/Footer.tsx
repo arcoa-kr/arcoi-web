@@ -5,7 +5,7 @@ export default function Footer() {
 
   return (
     <footer style={{
-      background: '#121212',
+      background: '#161923',
       padding: isMobile ? '60px 24px 56px' : '80px 28px 64px',
     }}>
       <div style={{
