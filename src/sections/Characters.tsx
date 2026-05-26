@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import useIsMobile from '../hooks/useIsMobile'
 import SectionChip from '../components/SectionChip'
 
@@ -59,10 +59,16 @@ export default function Characters() {
   const [activeIdx, setActiveIdx] = useState(2) // 루나 시작
   const isMobile = useIsMobile()
   const baseW = isMobile ? 160 : 280  
+  const touchStartX = useRef(0)
 
   return (
-    <section
-      id="characters" 
+    <section id="characters"
+      onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX }}
+      onTouchEnd={(e) => {
+        const diff = touchStartX.current - e.changedTouches[0].clientX
+        if (diff > 50 && activeIdx < masters.length - 1) setActiveIdx(prev => prev + 1)
+        else if (diff < -50 && activeIdx > 0) setActiveIdx(prev => prev - 1)
+      }}
       style={{
         padding: 'clamp(120px, 10vw, 240px) 0',
         background: '#111111',
@@ -199,13 +205,15 @@ export default function Characters() {
                   {char.cats && (
                     <div style={{
                       position: 'absolute',
-                      bottom: '88px', left: 0, right: 0,
+                      bottom: isMobile ? '72px' : '88px', 
+                      left: 0, right: 0,
                       display: 'flex', gap: '8px',
                       justifyContent: 'center',
                     }}>
                       {char.cats.map((cat, j) => (
                         <div key={j} style={{
-                          width: '54px', height: '54px',
+                          width: isMobile ? '33px' : '54px',
+                          height: isMobile ? '33px' : '54px',
                           borderRadius: '50%', overflow: 'hidden',
                           border: '1px solid rgba(244,167,187)',
                         }}>

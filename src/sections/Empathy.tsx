@@ -173,7 +173,7 @@ export default function Empathy() {
                       <p style={{
                         fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
                         fontSize: isMobile ? '15px' : 'clamp(15px,1.6vw,16px)',
-                        fontWeight: 400, color: '#F4A7BB',
+                        fontWeight: 400, color: '#FDCADE',
                         letterSpacing: '-0.01em',
                         marginTop: isMobile ? '8px' : '16px',
                       }}>{card.answer}</p>
