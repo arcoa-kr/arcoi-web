@@ -9,7 +9,7 @@ export default function Teaser() {
   return (
     <section id="teaser" 
       style={{
-        padding: isMobile ? '120px 24px' : 'clamp(160px, 12vw, 240px) 24px',
+        padding: isMobile ? '120px 24px' : 'clamp(200px, 12vw, 260px) 24px',
         position: 'relative',
         overflow: 'hidden',
         textAlign: 'center',
@@ -29,7 +29,7 @@ export default function Teaser() {
       <div style={{
         position: 'absolute',
         inset: 0,
-        background: 'rgba(8,8,16,0.3)',
+        background: 'rgba(8,8,16,0.15)',
         zIndex: 1,
       }} />
 
@@ -38,7 +38,7 @@ export default function Teaser() {
         position: 'absolute',
         top: 0, left: 0, right: 0,
         height: '120px',
-        background: 'linear-gradient(to bottom, #080810, transparent)',
+        background: 'linear-gradient(to bottom, #101520, transparent)',
         zIndex: 2,
       }} />
 
@@ -47,7 +47,7 @@ export default function Teaser() {
         position: 'absolute',
         bottom: 0, left: 0, right: 0,
         height: '120px',
-        background: 'linear-gradient(to top, #080810, transparent)',
+        background: 'linear-gradient(to top, #121212, transparent)',
         zIndex: 2,
       }} />
 

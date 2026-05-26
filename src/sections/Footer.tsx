@@ -5,9 +5,8 @@ export default function Footer() {
 
   return (
     <footer style={{
-      borderTop: '1px solid rgba(124,91,240,0.15)',
-      background: '#08080F',
-      padding: isMobile ? '48px 24px 56px' : '48px 40px 64px',
+      background: '#121212',
+      padding: isMobile ? '60px 24px 56px' : '80px 28px 64px',
     }}>
       <div style={{
         maxWidth: '1080px', margin: '0 auto',
@@ -55,6 +54,14 @@ export default function Footer() {
             ))}
           </div>
 
+          {/* Support */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+            <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', fontWeight: 600, color: '#F0EEFF', marginBottom: '4px' }}>Support</h3>
+            <a href="https://arcoa-kr.notion.site/36bb0d619bef81b996f8c783454caa29" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'rgba(240,238,255,0.4)', textDecoration: 'none' }}>Contact</a>
+            <a href="https://arcoa-kr.notion.site/arcoi-Terms-of-Service-36bb0d619bef81a0b508f91e907a5f30" style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'rgba(240,238,255,0.4)', textDecoration: 'none' }}>Terms of Service</a>
+            <a href="https://arcoa-kr.notion.site/arcoi-Privacy-Policy-36bb0d619bef81a0856fc813591277a7" style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'rgba(240,238,255,0.55)', textDecoration: 'none', fontWeight: 500 }}>Privacy Policy</a>
+          </div>
+
           {/* Family */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
             <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', fontWeight: 600, color: '#F0EEFF', marginBottom: '4px' }}>Family</h3>
@@ -66,13 +73,6 @@ export default function Footer() {
             ))}
           </div>
 
-          {/* Support */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-            <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', fontWeight: 600, color: '#F0EEFF', marginBottom: '4px' }}>Support</h3>
-            <a href="https://arcoa-kr.notion.site/36bb0d619bef81b996f8c783454caa29" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'rgba(240,238,255,0.4)', textDecoration: 'none' }}>Contact</a>
-            <a href="https://arcoa-kr.notion.site/arcoi-Terms-of-Service-36bb0d619bef81a0b508f91e907a5f30" style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'rgba(240,238,255,0.4)', textDecoration: 'none' }}>Terms of Service</a>
-            <a href="https://arcoa-kr.notion.site/arcoi-Privacy-Policy-36bb0d619bef81a0856fc813591277a7" style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'rgba(240,238,255,0.55)', textDecoration: 'none', fontWeight: 500 }}>Privacy Policy</a>
-          </div>
         </div>
       </div>
     </footer>

@@ -5,27 +5,27 @@ import useIsMobile from '../hooks/useIsMobile'
 const faqs = [
   {
     q: '아르코이는 어떤 앱인가요?',
-    a: '하루 한 장 타로카드를 뽑고 감정과 짧은 일기를 기록하는 셀프케어 앱이에요. 귀여운 고양이 타로카드와 마스터 루나가 마음을 읽어줍니다.',
+    a: '고양이 코코, 비비, 애쉬가 등장하는 <br />귀여운 타로카드와 함께 마스터 루나가 다정하게 리딩하는 마음 돌봄 앱입니다.<br />현재 앱인토스의 미니앱 [ <b style="color:#ffffff">아르코이: 타로 일기</b> ]로 출시되어 있으며, 2026년 여름에 정식 출시될 예정입니다.',
   },
   {
     q: '타로를 몰라도 사용할 수 있나요?',
-    a: '네. 질문을 준비하지 않아도 카드만 뽑으면 루나가 다정한 해설을 제공합니다.',
+    a: '네. <br />질문을 준비하지 않아도 카드만 고르면, <br />타로 마스터 루나가 다정한 해설을 제공합니다.',
   },
   {
     q: '실물 타로카드도 사용할 수 있나요?',
-    a: '네. 온라인 뽑기 외에 직접 가진 실물 카드로도 리딩할 수 있으며, 명상 타이머도 제공됩니다.',
+    a: '네. <br />본인의 실물 카드로 직접 리딩할 수 있으며, 명상 타이머를 사용할 수 있습니다. <br />타로 번호를 알려주면 마스터 루나가 다정한 해설을 제공합니다.',
   },
   {
-    q: '일기가 다른 사람에게 보이나요?',
-    a: '아니요. 일기는 매일 24시에 초기화되어 민감한 정보가 남지 않습니다. 걱정 없이 솔직하게 쓸 수 있어요.',
+    q: '일기가 노출되나요?',
+    a: '아니요. <br />일기는 매일 24시에 초기화되어 민감한 정보가 남지 않습니다. 걱정 없이 솔직하게 쓸 수 있어요. <br />[ <b style="color:#ffffff">해설 공유하기</b> ] 버튼으로 오늘의 일기와 해설을 간직해 보세요.',
   },
   {
-    q: '기록을 저장할 수 있나요?',
-    a: '네. 공유하기 기능으로 타로카드 배경의 고해상도 이미지를 저장하여 일기와 해설을 소장할 수 있습니다.',
+    q: '타로 해설을 소장할 수 있나요?',
+    a: '네. <br />[ <b style="color:#ffffff">해설 공유하기</b> ] 버튼을 사용하면 <br />오늘의 일기와 해설을 고품질 타로카드 배경과 함께 개인 소장할 수 있습니다.',
   },
   {
     q: '어디서 사용할 수 있나요?',
-    a: '토스 앱에서 "아르코이"를 검색하면 설치 없이 바로 사용할 수 있어요. 2026년 여름에 독립 앱으로도 출시 예정입니다.',
+    a: '현재 앱인토스 미니앱에서 [ <b style="color:#ffffff">아르코이: 타로 일기</b> ]를 검색하면 설치와 회원가입 없이 바로 사용할 수 있어요. <br />미니앱에서 타로 마스터 루나를 먼저 경험해 볼 수 있으며, <br />2026년 여름. 각 스토어에 정식 출시 예정입니다.',
   },
 ]
 
@@ -37,7 +37,7 @@ export default function FAQ() {
     <section id="faq" 
       style={{
         padding: isMobile ? '60px 24x' : 'clamp(120px, 12vw, 160px) 24px',
-        background: '#080810',
+        background: '#101520',
         position: 'relative',
       }}
     >
@@ -102,15 +102,15 @@ export default function FAQ() {
                   transition: 'max-height 0.4s ease, opacity 0.3s ease',
                   opacity: isOpen ? 1 : 0,
                 }}>
-                  <p style={{
-                    fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
-                    fontSize: 'clamp(15px, 1.6vw, 16px)',
-                    fontWeight: 400,
-                    color: 'rgba(240,238,255,0.55)',
-                    lineHeight: 1.7,
-                    letterSpacing: '-0.01em',
-                    padding: '0 24px 24px 0',
-                  }}>{faq.a}</p>
+                <p style={{
+                  fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
+                  fontSize: 'clamp(15px, 1.6vw, 16px)',
+                  fontWeight: 300,
+                  color: 'rgba(240,238,255,0.7)',
+                  lineHeight: 1.7,
+                  letterSpacing: '-0.01em',
+                  padding: '0 0 36px 0',
+                }} dangerouslySetInnerHTML={{ __html: faq.a }} />
                 </div>
               </div>
             )

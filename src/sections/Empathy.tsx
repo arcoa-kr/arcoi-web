@@ -36,7 +36,7 @@ export default function Empathy() {
       id="empathy"
       style={{
         padding: isMobile ? '120px 16px' : 'clamp(120px, 10vw, 240px) 24px',
-        background: 'linear-gradient(180deg, #1A1A2E 0%, #16213E 100%)',
+        background: 'linear-gradient(180deg, #201A2E 0%, #0C0F1D 100%)',
         overflow: 'hidden',
       }}
     >

@@ -39,7 +39,7 @@ function App() {
   }, [])  
 
   return (
-    <div style={{ minHeight: '100svh', background: '#1A1A2E' }}>
+    <div style={{ minHeight: '100svh', background: '#0C0F1D' }}>
       <Hero />
       <Empathy />
       <HowItWorks />

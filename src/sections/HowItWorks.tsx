@@ -63,7 +63,7 @@ export default function HowItWorks() {
   if (isMobile) {
     return (
       <section id="how-it-works" 
-        style={{ padding: '100px 24px', background: '#1A1A2E', overflow: 'hidden' }}
+        style={{ padding: '100px 24px', background: '#0C0F1D', overflow: 'hidden' }}
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
@@ -147,7 +147,7 @@ export default function HowItWorks() {
       style={{
         height: `${steps.length * 60}vh`,
         position: 'relative',
-        background: '#1A1A2E',
+        background: '#0C0F1D',
       }}
     >
       <div style={{
