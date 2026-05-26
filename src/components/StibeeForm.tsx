@@ -53,7 +53,7 @@ export default function StibeeForm() {
             type="submit"
             disabled={sending}
             style={{
-              background: '#F0D8D5',
+              background: '#D3B9C4',
               color: '#382A25',
               border: 'none',
               borderRadius: '50px',

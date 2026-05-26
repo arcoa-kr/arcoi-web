@@ -99,6 +99,7 @@ export default function Footer() {
           <span style={{
             fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
             fontSize: '15px',
+            lineHeight: '20px',
             color: 'rgba(240,238,255,0.45)',
           }}>
             소식 받기
