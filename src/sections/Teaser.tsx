@@ -81,15 +81,17 @@ export default function Teaser() {
             lineHeight: 1.65,
           }}
         >
-          2026년 8월, 정식으로 만나요.<br />
-          5명의 마스터와 함께하는 더 넓은 세계를 기다려 주세요.
+          2026년 10월, 정식으로 만나요.<br />
+          5명의 마스터와 함께하는 더 넓은 세계가 시작됩니다.
         </p>
 
         {/* 스토어 버튼 */}
-        <div style={{ 
-          display: 'flex',
-          justifyContent: 'center',
-          marginBottom: '48px',
+        <div
+          className="fade-in" 
+          style={{ 
+            display: 'flex',
+            justifyContent: 'center',
+            marginBottom: '48px',
           }}
         >
           <StoreButtons />

@@ -81,7 +81,7 @@ export default function Characters() {
         style={{
           position: 'absolute',
           inset: 0,
-          background: `radial-gradient(ellipse at 50% 50%, ${masters[activeIdx].color}33 0%, transparent 60%)`,
+          background: `radial-gradient(ellipse at 50% 50%, ${masters[activeIdx].color}33 0%, transparent 88%)`,
           transition: 'background 0.6s ease',
           pointerEvents: 'none',
         }}
@@ -99,7 +99,7 @@ export default function Characters() {
         </div>
 
         {/* 캐러셀 */}
-        <div style={{
+        <div className="fade-in" style={{
           position: 'relative',
           height: 'clamp(320px, 45vw, 480px)',
           display: 'flex',

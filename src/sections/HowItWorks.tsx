@@ -160,7 +160,7 @@ export default function HowItWorks() {
         }}>
 
         {/* 왼쪽: 폰 목업 — 다이얼 */}
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div className="fade-in" style={{ display: 'flex', justifyContent: 'center' }}>
           <div style={{ position: 'relative' }}>
             {/* 이미지 스트립 */}
             <div style={{
@@ -251,7 +251,7 @@ export default function HowItWorks() {
                 </div> 
               ))}
             </div>
-            <div className='mt-8'><StoreButtons /></div>
+            <div className="fade-in mt-8"><StoreButtons /></div>
           </div>
         </div>
       </div>

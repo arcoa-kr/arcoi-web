@@ -24,6 +24,21 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+:root {
+  --font-display: 'Nanum Myeongjo', 'Pretendard Variable', serif;
+  --font-body: 'Pretendard Variable', 'Pretendard', sans-serif;
+  --font-accent: 'Poppins', sans-serif;
+
+  --color-text: #F0EEFF;
+  --color-text-sub: rgba(240, 238, 255, 0.55);
+  --color-text-muted: rgba(240, 238, 255, 0.35);
+  --color-pink: #F4A7BB;
+  --color-purple: #7C5BF0;
+  --color-bg-deep: #0C0F1D;
+  --color-bg-dark: #080B14;
+  --color-bg-black: #060606;
+}
+
 /* Scroll reveal */
 .fade-in {
   opacity: 0;
