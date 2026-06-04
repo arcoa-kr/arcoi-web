@@ -45,15 +45,15 @@ export default function Footer() {
               { label: 'Characters', href: '#characters' },
               { label: 'FAQ', href: '#faq' },
             ].map(link => (
-              <a key={link.label} href={link.href} style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'rgba(240,238,255,0.4)', textDecoration: 'none' }}>{link.label}</a>
+              <a key={link.label} href={link.href} style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'rgba(240,238,255,0.55)', textDecoration: 'none' }}>{link.label}</a>
             ))}
           </div>
 
           {/* Support */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
             <h3 style={{ fontFamily: "'Poppins', sans-serif", fontSize: '14px', fontWeight: 600, color: '#F0EEFF', marginBottom: '4px' }}>Support</h3>
-            <a href="https://arcoa-kr.notion.site/36bb0d619bef81b996f8c783454caa29" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'rgba(240,238,255,0.4)', textDecoration: 'none' }}>Contact</a>
-            <a href="https://arcoa-kr.notion.site/arcoi-Terms-of-Service-36bb0d619bef81a0b508f91e907a5f30" style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'rgba(240,238,255,0.4)', textDecoration: 'none' }}>Terms of Service</a>
+            <a href="https://arcoa-kr.notion.site/36bb0d619bef81b996f8c783454caa29" target="_blank" rel="noopener noreferrer" style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'rgba(240,238,255,0.55)', textDecoration: 'none' }}>Contact</a>
+            <a href="https://arcoa-kr.notion.site/arcoi-Terms-of-Service-36bb0d619bef81a0b508f91e907a5f30" style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'rgba(240,238,255,0.55)', textDecoration: 'none' }}>Terms of Service</a>
             <a href="https://arcoa-kr.notion.site/arcoi-Privacy-Policy-36bb0d619bef81a0856fc813591277a7" style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'rgba(240,238,255,0.55)', textDecoration: 'none', fontWeight: 500 }}>Privacy Policy</a>
           </div>
 
@@ -64,7 +64,7 @@ export default function Footer() {
               { label: 'ARCOA', href: 'https://arcoa.kr' },
               { label: 'peeca', href: 'https://peeca.arcoa.kr' },
             ].map(link => (
-              <a key={link.label} href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'rgba(240,238,255,0.4)', textDecoration: 'none' }}>{link.label}</a>
+              <a key={link.label} href={link.href} target={link.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer" style={{ fontFamily: "'Poppins', sans-serif", fontSize: '13px', color: 'rgba(240,238,255,0.55)', textDecoration: 'none' }}>{link.label}</a>
             ))}
           </div>
         </div>
@@ -100,7 +100,7 @@ export default function Footer() {
             fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
             fontSize: '15px',
             lineHeight: '20px',
-            color: 'rgba(240,238,255,0.45)',
+            color: 'rgba(240,238,255,0.55)',
           }}>
             소식 받기
           </span>

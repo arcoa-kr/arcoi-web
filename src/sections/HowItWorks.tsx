@@ -128,7 +128,7 @@ export default function HowItWorks() {
             <p style={{
               fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
               fontSize: '14px', fontWeight: 400,
-              color: 'rgba(240,238,255,0.55)',
+              color: 'rgba(240,238,255,0.65)',
               lineHeight: 1.65, whiteSpace: 'pre-line',
             }}>{steps[activeStep].desc}</p>
           </div>
@@ -245,7 +245,7 @@ export default function HowItWorks() {
                   <p style={{
                     fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
                     fontSize: 'clamp(14px, 1.8vw, 16px)', fontWeight: 400,
-                    color: 'rgba(240,238,255,0.55)',
+                    color: 'rgba(240,238,255,0.65)',
                     lineHeight: 1.65, whiteSpace: 'pre-line',
                   }}>{step.desc}</p>
                 </div> 

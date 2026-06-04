@@ -31,7 +31,7 @@ body {
 
   --color-text: #F0EEFF;
   --color-text-sub: rgba(240, 238, 255, 0.55);
-  --color-text-muted: rgba(240, 238, 255, 0.35);
+  --color-text-muted: rgba(240, 238, 255, 0.5);
   --color-pink: #F4A7BB;
   --color-purple: #7C5BF0;
   --color-bg-deep: #0C0F1D;
@@ -164,4 +164,9 @@ body {
 
 input[type="email"]::placeholder {
   color: rgba(188, 188, 188, 0.8);
+}
+
+footer a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
