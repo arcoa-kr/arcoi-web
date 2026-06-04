@@ -135,9 +135,9 @@ export default function Hero() {
             letterSpacing: '-0.01em',
           }}
         >
-          궁금한 오늘의 나.<br />
+          궁금한 오늘 하루.<br />
           번거롭지 않게 케어하고 싶을 때<br />
-          타로 한 장이 나의 마음을 알아줘요.
+          타로 한 장이 나를 알아줘요.
         </p>
 
         <div className="fade-in" 
