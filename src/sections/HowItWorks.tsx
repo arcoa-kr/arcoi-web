@@ -54,7 +54,7 @@ export default function HowItWorks() {
   if (isMobile) {
     return (
       <section id="how-it-works"
-        className="bg-[#131123] overflow-hidden py-[100px] px-6"
+        className="bg-howit overflow-hidden py-[100px] px-6"
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >

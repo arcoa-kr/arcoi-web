@@ -52,7 +52,7 @@ export default function Empathy() {
     <section
       ref={sectionRef}
       id="empathy"
-      className="bg-[#211E38] overflow-hidden"
+      className="bg-empathy overflow-hidden"
       style={{ padding: isMobile ? '120px 16px' : 'clamp(120px, 10vw, 240px) 24px' }}
     >
       <div className="max-w-[1080px] mx-auto">

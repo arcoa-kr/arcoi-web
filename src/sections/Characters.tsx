@@ -27,7 +27,7 @@ export default function Characters() {
 
   return (
     <section id="characters"
-      className="bg-[#111111] relative overflow-hidden"
+      className="bg-char relative overflow-hidden"
       style={{ padding: 'clamp(120px, 10vw, 240px) 0' }}
       onTouchStart={(e) => { touchStartX.current = e.touches[0].clientX }}
       onTouchEnd={(e) => {
