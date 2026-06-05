@@ -21,78 +21,30 @@ export default function StibeeForm() {
           target="stibee_hidden"
           acceptCharset="utf-8"
           onSubmit={handleSubmit}
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '4px',
-
-            fontFamily: "'Poppins', sans-serif",
-          }}
+          className="flex items-center gap-1 font-accent"
         >
           <input
             type="email"
             name="email"
             placeholder="hello@email.com"
             required
-            style={{
-              background: 'rgba(187, 187, 187, 0.15)',
-              border: 'none',
-              borderRadius: '50px',
-              padding: '0 15px',
-              fontSize: '15px',
-              fontFamily: "'Poppins', sans-serif",
-              fontWeight: 400,
-              color: '#FFFFFF',
-              width: '210px',
-              height: '44px',
-              outline: 'none',
-            }}
+            className="bg-white/10 border-none rounded-full px-[15px] text-[15px] font-accent font-normal text-white w-[210px] h-[44px] outline-none"
           />
           <input type="hidden" name="stb_policy" value="stb_policy_true" />
           <button
             type="submit"
             disabled={sending}
-            style={{
-              background: '#D3B9C4',
-              color: '#382A25',
-              border: 'none',
-              borderRadius: '50px',
-              width: '72px',
-              height: '42px',
-              fontSize: '15px',
-              fontFamily: "'Poppins', sans-serif",
-              fontWeight: 500,
-              cursor: sending ? 'default' : 'pointer',
-              whiteSpace: 'nowrap',
-            }}
+            className={`bg-[#D3B9C4] text-[#382A25] border-none rounded-full w-[72px] h-[42px] text-[15px] font-accent font-medium whitespace-nowrap ${sending ? 'cursor-default' : 'cursor-pointer'}`}
           >
             {sending ? '...' : '구독'}
           </button>
         </form>
       ) : (
-        <div
-          style={{
-            background: 'rgba(187, 187, 187, 0.2)',
-            borderRadius: '50px',
-            padding: '0 23px',
-            fontSize: '15px',
-            fontFamily: "'Poppins', sans-serif",
-            fontWeight: 400,
-            color: '#FFFFFF',
-            width: '286px',
-            height: '44px',
-            lineHeight: '44px',
-            textAlign: 'left',
-          }}
-        >
+        <div className="bg-white/20 rounded-full px-[23px] text-[15px] font-accent font-normal text-white w-[286px] h-[44px] leading-[44px] text-left">
           Check your email ✦ Thanks💖
         </div>
       )}
-      <iframe
-        ref={iframeRef}
-        name="stibee_hidden"
-        style={{ display: 'none' }}
-      />
+      <iframe ref={iframeRef} name="stibee_hidden" className="hidden" />
     </>
   )
 }

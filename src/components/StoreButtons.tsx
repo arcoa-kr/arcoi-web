@@ -7,19 +7,15 @@ export default function StoreButtons() {
     <div>
       {/* 모바일: 토스 버튼 */}
       <div className="block sm:hidden">
-        <a
-          href={STORE_LINKS.toss}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="/Toss.png" alt="토스에서 열기" style={{ height: '40px' }} />
+        <a href={STORE_LINKS.toss} target="_blank" rel="noopener noreferrer">
+          <img src="/Toss.png" alt="토스에서 열기" className="h-10" />
         </a>
       </div>
 
       {/* 데스크톱: 안내 문구 */}
-      <div className="hidden sm:flex items-center" style={{ color: '#cccccc', fontSize: '14px' }}>
-        <img src="/toss_w.png" alt="toss" style={{ height: '18px', marginRight: '4px' }} />
-        <p>미니앱에서 <b style={{ color: '#eeeeee', fontSize: '15px' }}>아르코이</b>를 검색해 보세요.</p>
+      <div className="hidden sm:flex items-center text-[#cccccc] text-sm">
+        <img src="/toss_w.png" alt="toss" className="h-[18px] mr-1" />
+        <p>미니앱에서 <b className="text-[#eeeeee] text-[15px]">아르코이</b>를 검색해 보세요.</p>
       </div>
     </div>
   )
