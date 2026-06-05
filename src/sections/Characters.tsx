@@ -46,7 +46,7 @@ export default function Characters() {
         <div className="fade-in text-center" style={{ marginBottom: 'clamp(32px, 5vw, 4px)' }}>
           <SectionChip label="Tarot Masters" />
           <h2 className="font-display font-bold tracking-[-0.03em] text-text m-0"
-            style={{ fontSize: 'clamp(26px,4vw,38px)' }}
+            style={{ fontSize: 'clamp(32px,4vw,42px)' }}
           >
             아르코이의 마스터
           </h2>
@@ -109,17 +109,17 @@ export default function Characters() {
 
                   {/* 이름 */}
                   <div className="absolute bottom-5 left-0 right-0 text-center">
-                    <p className="font-accent font-normal tracking-[0.05em] uppercase"
+                    <p className="font-display font-normal tracking-[0.05em] uppercase"
                       style={{
-                        fontSize: 'clamp(16px, 2vw, 22px)',
+                        fontSize: 'clamp(16px, 2vw, 24px)',
                         color: char.locked ? 'rgba(255,255,255,0.21)' : char.color,
                       }}
                     >
                       {char.name}
                     </p>
-                    <p className="font-body font-light"
+                    <p className="font-display font-light"
                       style={{
-                        fontSize: 'clamp(14px, 2vw, 15px)',
+                        fontSize: 'clamp(14px, 2vw, 16px)',
                         color: char.locked ? 'rgba(255,255,255,0.25)' : '#F0EEFF',
                       }}
                     >
@@ -152,7 +152,7 @@ export default function Characters() {
         </div>
 
         {/* 선택된 캐릭터 정보 */}
-        <div className="text-center min-h-[70px]" style={{ marginTop: 'clamp(16px, 3vw, 32px)' }}>
+        <div className="text-center min-h-[70px]" style={{ marginTop: 'clamp(10px, 3vw, 24px)' }}>
           {!masters[activeIdx].locked ? (
             <div>
               <p className="font-body font-normal mb-[7px] opacity-80"
@@ -161,7 +161,7 @@ export default function Characters() {
                 {masters[activeIdx].role}
               </p>
               <p className="font-display font-normal italic text-text"
-                style={{ fontSize: 'clamp(17px, 2vw, 18px)' }}
+                style={{ fontSize: 'clamp(16px, 2vw, 20px)' }}
               >
                 "{masters[activeIdx].quote}"
               </p>

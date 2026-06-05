@@ -58,11 +58,11 @@ export default function Empathy() {
       <div className="max-w-[1080px] mx-auto">
         {/* 제목 */}
         <div className="fade-in text-center"
-          style={{ marginBottom: isMobile ? '32px' : 'clamp(32px, 5vw, 64px)' }}
+          style={{ marginBottom: isMobile ? '32px' : 'clamp(32px, 5vw, 48px)' }}
         >
           <SectionChip label="Why arcoi" />
           <h2 className="font-display font-bold tracking-[-0.03em] text-text m-0"
-            style={{ fontSize: 'clamp(26px,4vw,38px)' }}
+            style={{ fontSize: 'clamp(32px,4vw,42px)' }}
           >
             오늘의 나를 만나요
           </h2>

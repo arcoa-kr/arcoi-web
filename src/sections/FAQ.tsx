@@ -5,15 +5,15 @@ import useIsMobile from '../hooks/useIsMobile'
 const faqs = [
   {
     q: '아르코이는 어떤 앱인가요?',
-    a: '고양이 코코, 비비, 애쉬가 등장하는 오리지널 타로카드와 함께 마스터 루나가 다정하게 리딩하는 마음 돌봄 앱입니다.<br />현재 앱인토스의 미니앱 [ <b style="color:#ffffff">아르코이: 타로 일기</b> ]으로 미리 만날 수 있으며, 2026년 10월에 정식 출시될 예정입니다.',
+    a: '마스터 오라클이 키우는 고양이 코코, 비비, 애쉬가 활약하는 오리지널 타로카드를 사용하여, 마스터 루나가 당신의 하루를 다정하게 해설해 주는 마음 돌봄 앱입니다.<br />현재 앱인토스의 미니앱 [ <b style="color:#ffffff">아르코이: 타로 일기</b> ]로 미리 만날 수 있으며, 2026년 10월에 정식 출시될 예정입니다.',
   },
   {
     q: '타로를 몰라도 사용할 수 있나요?',
-    a: '네. <br />질문을 준비하지 않아도 카드만 고르면, <br />타로 마스터 루나가 당신의 하루를 함께 체크해 줍니다.',
+    a: '네. <br />질문을 준비하지 않아도 카드만 고르면, <br />타로 마스터 루나가 해설을 진행합니다.',
   },
   {
     q: '실물 타로카드도 사용할 수 있나요?',
-    a: '네. <br />본인의 실물 카드로 직접 리딩할 수 있으며,<br />명상 타이머도 사용할 수 있습니다.<br />타로 번호를 입력하면 마스터 루나가 다정하게 해설합니다.',
+    a: '네. <br />본인의 실물 카드로 직접 리딩할 수 있으며,<br />명상 타이머도 사용할 수 있습니다.<br />타로 번호를 입력하면 마스터 루나가 해설을 합니다.',
   },
   {
     q: '일기는 안전한가요?',
@@ -24,7 +24,7 @@ const faqs = [
     a: '네. <br />[ <b style="color:#ffffff">해설 공유하기</b> ] 버튼을 사용하면<br />오늘의 일기와 해설을 예쁜 타로카드 배경과 함께 소장하거나 공유할 수 있습니다.',
   },
   {
-    q: '어디에서 사용해 볼 수 있나요?',
+    q: '어디서 사용해 볼 수 있나요?',
     a: '현재 앱인토스 미니앱에서 [ <b style="color:#ffffff">아르코이: 타로 일기</b> ]를 검색하면, 설치와 회원가입 없이 바로 사용할 수 있어요. <br />미니앱을 통해 마스터 루나를 먼저 경험해 볼 수 있으며, <br />루나를 포함한 5명의 마스터를 모두 만날 수 있는 앱은 2026년 10월에 정식 출시 예정입니다.',
   },
 ]
@@ -41,7 +41,7 @@ export default function FAQ() {
         {/* 제목 */}
         <div className="fade-in text-center" style={{ marginBottom: 'clamp(32px, 6vw, 48px)' }}>
           <SectionChip label="FAQ" />
-          <h2 className="font-display text-text font-bold tracking-[-0.03em] m-0" style={{ fontSize: 'clamp(26px,4vw,38px)' }}>
+          <h2 className="font-display text-text font-bold tracking-[-0.03em] m-0" style={{ fontSize: 'clamp(32px, 4vw, 42px)' }}>
             자주 묻는 질문
           </h2>
         </div>
@@ -56,7 +56,7 @@ export default function FAQ() {
                   onClick={() => setOpenIdx(isOpen ? null : i)}
                   className="w-full py-5 bg-transparent border-none cursor-pointer flex justify-between items-center gap-4"
                 >
-                  <span className={`font-body font-medium text-left tracking-[-0.01em] transition-colors duration-300 ${isOpen ? 'text-pink' : 'text-text'}`}
+                  <span className={`font-body font-normal text-left tracking-[-0.01em] transition-colors duration-300 ${isOpen ? 'text-pink' : 'text-text'}`}
                     style={{ fontSize: 'clamp(16px, 2vw, 18px)' }}
                   >
                     {faq.q}

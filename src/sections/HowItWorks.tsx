@@ -62,7 +62,7 @@ export default function HowItWorks() {
           <div className="fade-in">
             <SectionChip label="How it works" />
             <h2 className="font-display font-bold tracking-[-0.03em] text-text mb-6"
-              style={{ fontSize: 'clamp(26px,4vw,38px)' }}
+              style={{ fontSize: 'clamp(32px, 4vw, 48px)' }}
             >
               이렇게 사용해요
             </h2>
@@ -167,7 +167,7 @@ export default function HowItWorks() {
           <div className="fade-in">
             <SectionChip label="How it works" />
             <h2 className="font-display font-bold tracking-[-0.03em] text-text"
-              style={{ fontSize: 'clamp(26px,4vw,38px)', marginBottom: 'clamp(32px, 5vw, 48px)' }}
+              style={{ fontSize: 'clamp(32px,4vw,42px)', marginBottom: 'clamp(32px, 5vw, 48px)' }}
             >
               이렇게 사용해요
             </h2>
@@ -205,7 +205,7 @@ export default function HowItWorks() {
                   }}
                 >
                   <h3 className="font-body font-semibold text-text tracking-[-0.02em] mb-3"
-                    style={{ fontSize: 'clamp(18px, 2.5vw, 24px)' }}
+                    style={{ fontSize: 'clamp(20px, 2.5vw, 23px)' }}
                   >
                     {step.title}
                   </h3>

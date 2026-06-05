@@ -62,18 +62,18 @@ export default function Hero() {
 
         <h1 className="fade-in font-display font-bold leading-[1.4] tracking-[-0.03em] text-text mb-10"
           style={{
-            fontSize: 'clamp(42px, 4.5vw, 58px)',
+            fontSize: 'clamp(48px, 4.5vw, 62px)',
             textShadow: '0 2px 32px rgba(13,11,30,0.8)',
           }}
         >
           하루 한 장,
-          <p style={{ fontSize: 'clamp(45px, 4.7vw, 60.5px)' }}>타로 일기</p>
+          <p style={{ fontSize: 'clamp(52px, 4.7vw, 65px)' }}>타로 일기</p>
         </h1>
 
         <p className="fade-in font-body font-light text-[#DAD0EF] tracking-[-0.01em] ml-1.5 mb-10"
           style={{
-            fontSize: 'clamp(16px, 2vw, 18px)',
-            lineHeight: 'clamp(27px, 2vw, 33px)',
+            fontSize: 'clamp(16px, 2vw, 17.5px)',
+            lineHeight: 'clamp(26px, 2vw, 30px)',
           }}
         >
           궁금한 오늘 하루.<br />
