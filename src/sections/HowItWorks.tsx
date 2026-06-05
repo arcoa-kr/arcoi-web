@@ -166,7 +166,7 @@ export default function HowItWorks() {
           {/* 오른쪽: 텍스트 */}
           <div className="fade-in">
             <SectionChip label="How it works" />
-            <h2 className="font-display font-semibold tracking-[-0.03em] text-text"
+            <h2 className="font-display font-bold tracking-[-0.03em] text-text"
               style={{ fontSize: 'clamp(26px,4vw,38px)', marginBottom: 'clamp(32px, 5vw, 48px)' }}
             >
               이렇게 사용해요

@@ -27,7 +27,7 @@ export default function Teaser() {
         <SectionChip label="Coming Soon" />
 
         {/* Main copy */}
-        <h2 className="fade-in font-display font-extrabold tracking-[-0.03em] text-text leading-[1.3] mb-4"
+        <h2 className="fade-in font-display font-bold tracking-[-0.03em] text-text leading-[1.3] mb-4"
           style={{ fontSize: 'clamp(32px, 4.5vw, 44px)' }}
         >
           아르코이의 이야기는<br />

@@ -60,7 +60,7 @@ export default function Hero() {
           arcoi by ARCOA
         </p>
 
-        <h1 className="fade-in font-display font-semibold leading-[1.4] tracking-[-0.03em] text-text mb-10"
+        <h1 className="fade-in font-display font-bold leading-[1.4] tracking-[-0.03em] text-text mb-10"
           style={{
             fontSize: 'clamp(42px, 4.5vw, 58px)',
             textShadow: '0 2px 32px rgba(13,11,30,0.8)',

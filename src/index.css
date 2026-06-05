@@ -70,12 +70,6 @@ body {
   font-display: swap;
   src: url('/fonts/NanumMyeongjo-Bold.woff2') format('woff2');
 }
-@font-face {
-  font-family: 'Nanum Myeongjo';
-  font-weight: 800;
-  font-display: swap;
-  src: url('/fonts/NanumMyeongjo-ExtraBold.woff2') format('woff2');
-}
 
 /* Scroll reveal */
 .fade-in {
