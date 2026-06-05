@@ -34,83 +34,43 @@ export default function FAQ() {
   const isMobile = useIsMobile()
 
   return (
-    <section id="faq" 
-      style={{
-        padding: isMobile ? '60px 24px' : 'clamp(120px, 12vw, 160px) 24px',
-        background: '#161923',
-        position: 'relative',
-      }}
+    <section id="faq" className={`${isMobile ? 'py-[60px] px-6' : 'px-6'} bg-bg-footer relative`}
+      style={{ padding: isMobile ? undefined : 'clamp(120px, 12vw, 160px) 24px' }}
     >
-      <div style={{ maxWidth: '700px', margin: '0 auto' }}>
+      <div className="max-w-[700px] mx-auto">
         {/* 제목 */}
-        <div className="fade-in" style={{ textAlign: 'center', marginBottom: 'clamp(32px, 6vw, 48px)' }}>
-        <SectionChip label="FAQ" />
-          <h2 style={{
-            fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
-            fontSize: 'clamp(26px,4vw,38px)', fontWeight: 700,
-            letterSpacing: '-0.03em', color: '#F0EEFF', margin: 0,
-          }}>자주 묻는 질문</h2>
+        <div className="fade-in text-center" style={{ marginBottom: 'clamp(32px, 6vw, 48px)' }}>
+          <SectionChip label="FAQ" />
+          <h2 className="font-display text-text font-bold tracking-[-0.03em] m-0" style={{ fontSize: 'clamp(26px,4vw,38px)' }}>
+            자주 묻는 질문
+          </h2>
         </div>
 
         {/* 아코디언 */}
-        <div className="fade-in" style={{ display: 'flex', flexDirection: 'column', gap: '0' }}>
+        <div className="fade-in flex flex-col">
           {faqs.map((faq, i) => {
             const isOpen = openIdx === i
-
             return (
-              <div
-                key={i}
-                style={{
-                  borderBottom: '1px solid rgba(240,238,255,0.1)',
-                }}
-              >
+              <div key={i} className="border-b border-text/10">
                 <button
                   onClick={() => setOpenIdx(isOpen ? null : i)}
-                  style={{
-                    width: '100%',
-                    padding: '20px 0',
-                    background: 'none',
-                    border: 'none',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    gap: '16px',
-                  }}
+                  className="w-full py-5 bg-transparent border-none cursor-pointer flex justify-between items-center gap-4"
                 >
-                  <span style={{
-                    fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
-                    fontSize: 'clamp(16px, 2vw, 18px)',
-                    fontWeight: 500,
-                    color: isOpen ? '#F4A7BB' : '#F0EEFF',
-                    textAlign: 'left',
-                    letterSpacing: '-0.01em',
-                    transition: 'color 0.3s ease',
-                  }}>{faq.q}</span>
-                  <span style={{
-                    fontSize: '28px',
-                    color: isOpen ? '#F4A7BB' : 'rgba(240,238,255,0.3)',
-                    transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
-                    transition: 'all 0.3s ease',
-                    flexShrink: 0,
-                  }}>+</span>
+                  <span className={`font-body font-medium text-left tracking-[-0.01em] transition-colors duration-300 ${isOpen ? 'text-pink' : 'text-text'}`}
+                    style={{ fontSize: 'clamp(16px, 2vw, 18px)' }}
+                  >
+                    {faq.q}
+                  </span>
+                  <span className={`text-[28px] shrink-0 transition-all duration-300 ${isOpen ? 'text-pink rotate-45' : 'text-text/30 rotate-0'}`}>
+                    +
+                  </span>
                 </button>
 
-                <div style={{
-                  maxHeight: isOpen ? '200px' : '0',
-                  overflow: 'hidden',
-                  transition: 'max-height 0.4s ease, opacity 0.3s ease',
-                  opacity: isOpen ? 1 : 0,
-                }}>
-                <p style={{
-                  fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
-                  fontSize: 'clamp(15px, 1.6vw, 16px)',
-                  fontWeight: 300,
-                  color: 'rgba(240,238,255,0.7)',
-                  lineHeight: 1.7,
-                  letterSpacing: '-0.01em',
-                  padding: '0 0 28px 0',
-                }} dangerouslySetInnerHTML={{ __html: faq.a }} />
+                <div className={`overflow-hidden transition-all duration-400 ${isOpen ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0'}`}>
+                  <p className="font-body font-light text-text-sub leading-[1.7] tracking-[-0.01em] pb-7"
+                    style={{ fontSize: 'clamp(15px, 1.6vw, 16px)' }}
+                    dangerouslySetInnerHTML={{ __html: faq.a }}
+                  />
                 </div>
               </div>
             )
