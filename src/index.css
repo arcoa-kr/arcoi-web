@@ -3,13 +3,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap');
 @import "tailwindcss";
 
-theme {
-  --color-arcoi-purple: #7C5BF0;
-  --color-arcoi-pink: #F4A7BB;
-  --color-arcoi-navy: #1A1A2E;
-  --color-arcoi-navy-light: #16213E;
-  --font-pretendard: 'Pretendard Variable', 'Pretendard', sans-serif;
-  --font-poppins: 'Poppins', sans-serif;
+@theme {
+  --font-display: 'Nanum Myeongjo', 'Pretendard Variable', serif;
+  --font-body: 'Pretendard Variable', 'Pretendard', sans-serif;
+  --font-accent: 'Poppins', sans-serif;
+
+  --color-text: #F0EEFF;
+  --color-text-sub: rgba(240, 238, 255, 0.7);
+  --color-text-muted: rgba(240, 238, 255, 0.6);
+  --color-pink: #F4A7BB;
+  --color-pink-soft: #FDCADE;
+  --color-purple: #7C5BF0;
+  --color-purple-soft: #C4A0FF;
+  --color-bg-deep: #0C0F1D;
+  --color-bg-dark: #080B14;
+  --color-bg-black: #060606;
+  --color-bg-footer: #161923;
 }
 
 * { box-sizing: border-box; }
@@ -22,21 +31,6 @@ body {
   color: #F0EEFF;
   font-family: 'Pretendard Variable', 'Pretendard', sans-serif;
   -webkit-font-smoothing: antialiased;
-}
-
-:root {
-  --font-display: 'Nanum Myeongjo', 'Pretendard Variable', serif;
-  --font-body: 'Pretendard Variable', 'Pretendard', sans-serif;
-  --font-accent: 'Poppins', sans-serif;
-
-  --color-text: #F0EEFF;
-  --color-text-sub: rgba(240, 238, 255, 0.55);
-  --color-text-muted: rgba(240, 238, 255, 0.5);
-  --color-pink: #F4A7BB;
-  --color-purple: #7C5BF0;
-  --color-bg-deep: #0C0F1D;
-  --color-bg-dark: #080B14;
-  --color-bg-black: #060606;
 }
 
 /* Scroll reveal */
