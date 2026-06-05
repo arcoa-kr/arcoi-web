@@ -15,7 +15,6 @@ export default function Hero() {
       const y = (e.clientY / window.innerHeight - 0.5) * 2
       content.style.transform = `translate(${x * 6}px, ${y * 4}px)`
     }
-
     window.addEventListener('mousemove', handleMouseMove)
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [])
@@ -29,110 +28,52 @@ export default function Hero() {
   }, [])
 
   return (
-    <section
-      id="hero"
-      style={{
-        position: 'relative',
-        minHeight: '100svh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        overflow: 'hidden',
-      }}
-    >
+    <section id="hero" className="relative min-h-svh flex items-center justify-center overflow-hidden">
+
       {/* Luna background image */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          backgroundImage: 'url(/hero-luna.webp)',
-          backgroundSize: 'cover',
-          backgroundPosition: isMobile ? '62% bottom' : 'center bottom',
-          zIndex: 0,
-        }}
+      <div className="absolute inset-0 bg-cover z-0"
+        style={{ backgroundImage: 'url(/hero-luna.webp)', backgroundPosition: isMobile ? '62% bottom' : 'center bottom' }}
       />
 
-      {/* Dark overlay for text readability */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'linear-gradient(to right, rgba(13,11,30,0.1) 0%, rgba(13,11,30,0.1) 35%, transparent 55%)',
-          zIndex: 1,
-        }}
+      {/* Dark overlay */}
+      <div className="absolute inset-0 z-[1]"
+        style={{ background: 'linear-gradient(to right, rgba(13,11,30,0.1) 0%, rgba(13,11,30,0.1) 35%, transparent 55%)' }}
       />
 
-      {/* Bottom fade into next section */}
-      <div
-        style={{
-          position: 'absolute',
-          bottom: 0,
-          left: 0,
-          right: 0,
-          height: '80px',
-          background: 'linear-gradient(to bottom, transparent, #24213C)',
-          zIndex: 2,
-        }}
+      {/* Bottom fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-20 z-[2]"
+        style={{ background: 'linear-gradient(to bottom, transparent, #24213C)' }}
       />
 
       {/* Firefly particles */}
       <StarParticles />
 
-      {/* Main content — left aligned with parallax */}
-      <div
-        ref={contentRef}
+      {/* Main content */}
+      <div ref={contentRef}
+        className="relative z-[4] text-left px-9 pb-12 max-w-[950px] w-full will-change-transform"
         style={{
-          position: 'relative',
-          zIndex: 4,
-          textAlign: 'left',
-          padding: '0 36px 48px',
-          maxWidth: '950px',
-          width: '100%',
           transition: 'transform 0.2s ease-out',
           transform: `translateY(${-scrollY * 0.3}px)`,
-          willChange: 'transform',
         }}
       >
-        <p className="fade-in" 
-          style={{
-            fontFamily: "'Poppins', sans-serif",
-            fontSize: '14px',
-            fontWeight: 300,
-            letterSpacing: '1px',
-            color: '#F4A7BB',
-            marginBottom: '20px',
-            marginLeft: '4px'
-          }}
-        >
+        <p className="fade-in font-accent text-sm font-light tracking-[1px] text-pink mb-5 ml-1">
           arcoi by ARCOA
         </p>
 
-        <h1 className="fade-in" 
+        <h1 className="fade-in font-display font-semibold leading-[1.4] tracking-[-0.03em] text-text mb-10"
           style={{
-            fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
             fontSize: 'clamp(42px, 4.5vw, 58px)',
-            fontWeight: 600,
-            lineHeight: 1.4,
-            letterSpacing: '-0.03em',
-            color: '#F0EEFF',
-            marginBottom: '40px',
             textShadow: '0 2px 32px rgba(13,11,30,0.8)',
           }}
         >
           하루 한 장,
-          <p style={{ fontSize:'clamp(45px, 4.7vw, 60.5px)' }}>타로 일기</p>
+          <p style={{ fontSize: 'clamp(45px, 4.7vw, 60.5px)' }}>타로 일기</p>
         </h1>
 
-        <p className="fade-in" 
+        <p className="fade-in font-body font-light text-[#DAD0EF] tracking-[-0.01em] ml-1.5 mb-10"
           style={{
-            fontFamily: "'Pretendard Variable', 'Pretendard', sans-serif",
             fontSize: 'clamp(16px, 2vw, 18px)',
-            fontWeight: 300,
-            color: '#DAD0EF',
             lineHeight: 'clamp(27px, 2vw, 33px)',
-            marginLeft: '6px',
-            marginBottom: '40px',
-            letterSpacing: '-0.01em',
           }}
         >
           궁금한 오늘 하루.<br />
@@ -140,27 +81,13 @@ export default function Hero() {
           타로 한 장이 나를 알아줘요.
         </p>
 
-        <div className="fade-in" 
-          style={{
-            marginLeft: '4px',
-          }}
-        >    
+        <div className="fade-in ml-1">
           <StoreButtons />
         </div>
       </div>
 
       {/* Scroll arrow */}
-      <div
-        className="bounce-down"
-        style={{
-          position: 'absolute',
-          bottom: '32px',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          zIndex: 5,
-          color: 'rgba(240, 238, 255, 0.4)',
-        }}
-      >
+      <div className="bounce-down absolute bottom-8 left-1/2 -translate-x-1/2 z-[5] text-text/40">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
