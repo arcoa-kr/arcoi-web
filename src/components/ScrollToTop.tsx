@@ -16,26 +16,9 @@ export default function ScrollToTop() {
   return (
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-      style={{
-        position: 'fixed',
-        bottom: '60px',
-        right: '44px',
-        width: '44px',
-        height: '44px',
-        borderRadius: '50%',
-        border: '1.5px solid rgba(255,202,222,0.3)',
-        background: 'rgba(12,15,29,0.8)',
-        backdropFilter: 'blur(8px)',
-        color: '#FDCADE',
-        fontSize: '20px',
-        cursor: 'pointer',
-        opacity: show ? 1 : 0,
-        pointerEvents: show ? 'auto' : 'none',
-        transition: 'opacity 0.3s ease',
-        zIndex: 100,
-      }}
+      className={`fixed bottom-[60px] right-[44px] w-11 h-11 rounded-full border-[1.5px] border-pink-soft/30 bg-bg-deep/80 backdrop-blur-md text-pink-soft text-xl cursor-pointer transition-opacity duration-300 z-[100] ${show ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
     >
       ↑
     </button>
-  )
+  )  
 }
