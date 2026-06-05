@@ -26,7 +26,6 @@ const cards = [
   },
 ]
 
-
 export default function Empathy() {
   const sectionRef = useRef<HTMLElement>(null)
   const [phase, setPhase] = useState(0)
@@ -53,39 +52,32 @@ export default function Empathy() {
     <section
       ref={sectionRef}
       id="empathy"
-      style={{
-        padding: isMobile ? '120px 16px' : 'clamp(120px, 10vw, 240px) 24px',
-        background: '#211E38',
-        overflow: 'hidden',
-      }}
+      className="bg-[#211E38] overflow-hidden"
+      style={{ padding: isMobile ? '120px 16px' : 'clamp(120px, 10vw, 240px) 24px' }}
     >
-      <div style={{ maxWidth: '1080px', margin: '0 auto' }}>
+      <div className="max-w-[1080px] mx-auto">
         {/* 제목 */}
-        <div className="fade-in" style={{ textAlign: 'center', marginBottom: isMobile ? '32px' : 'clamp(32px, 5vw, 64px)' }}>
+        <div className="fade-in text-center"
+          style={{ marginBottom: isMobile ? '32px' : 'clamp(32px, 5vw, 64px)' }}
+        >
           <SectionChip label="Why arcoi" />
-          <h2 style={{
-            fontFamily: "'Nanum Myeongjo', 'Pretendard Variable', serif",
-            fontSize: 'clamp(26px,4vw,38px)', fontWeight: 700,
-            letterSpacing: '-0.03em', color: '#F0EEFF', margin: 0,
-          }}>오늘의 나를 만나요</h2>
+          <h2 className="font-display font-bold tracking-[-0.03em] text-text m-0"
+            style={{ fontSize: 'clamp(26px,4vw,38px)' }}
+          >
+            오늘의 나를 만나요
+          </h2>
         </div>
 
-          {/* 카드 3장 */}
-          <div style={{
-            display: 'flex',
-            flexDirection: isMobile ? 'column' : 'row',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: isMobile ? '48px' : 'clamp(55px, 3vw, 60px)',
-          }}>
-
+        {/* 카드 3장 */}
+        <div className={`flex ${isMobile ? 'flex-col' : 'flex-row'} items-center justify-center`}
+          style={{ gap: isMobile ? '48px' : 'clamp(55px, 3vw, 60px)' }}
+        >
           {cards.map((card, i) => {
             const isUp = phase >= 1
             const showText = phase === 2
 
             return (
-              <div
-                key={i}
+              <div key={i}
                 style={{
                   opacity: isUp ? 1 : 0,
                   transform: isUp ? 'translateY(0)' : 'translateY(120px)',
@@ -94,14 +86,13 @@ export default function Empathy() {
               >
                 <div style={{ perspective: '1000px' }}>
                   <div
+                    className="relative cursor-pointer"
                     style={{
                       width: isMobile ? '53vw' : 'clamp(200px, 22vw, 240px)',
                       aspectRatio: '2 / 3',
-                      position: 'relative',
                       transformStyle: 'preserve-3d',
                       transform: showText ? 'rotateY(180deg)' : 'rotateY(0deg)',
                       transition: `transform 0.8s cubic-bezier(0.4,0,0.2,1) ${showText ? i * 400 : i * 300}ms`,
-                      cursor: 'pointer',
                     }}
                     onMouseEnter={e => {
                       if (phase >= 3) e.currentTarget.style.transform = 'rotateY(180deg)'
@@ -120,66 +111,54 @@ export default function Empathy() {
                     } : {})}
                   >
                     {/* 뒷면 = 타로카드 이미지 */}
-                    <div style={{
-                      position: 'absolute', inset: 0,
-                      backfaceVisibility: 'hidden',
-                      borderRadius: isMobile ? '8px' : '12px',
-                      overflow: 'hidden',
-                      boxShadow: '0 8px 32px rgba(0,0,0,0.5)',
-                    }}>
-                      <img src={card.image} alt={card.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                    <div className={`absolute inset-0 ${isMobile ? 'rounded-lg' : 'rounded-xl'} overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.5)]`}
+                      style={{ backfaceVisibility: 'hidden' }}
+                    >
+                      <img src={card.image} alt={card.name} className="w-full h-full object-cover" />
                     </div>
 
-                  {/* 앞면 = 텍스트 */}
-                  <div style={{
-                    position: 'absolute', inset: 0,
-                    backfaceVisibility: 'hidden',
-                    transform: 'rotateY(180deg)',
-                    borderRadius: isMobile ? '12px' : '16px',
-                    padding: isMobile ? '12px 30px' : 'clamp(20px,3vw,30px) clamp(16px,2vw,30px)',
-                    display: 'flex', flexDirection: 'column',
-                    justifyContent: 'center', alignItems: 'center', textAlign: 'center',
-                    backgroundImage: `url(${card.image})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center',
-                    overflow: 'hidden',
-                  }}>
-                    {/* 어두운 오버레이 — 텍스트 가독성 */}
-                    <div style={{
-                      position: 'absolute', inset: 0,
-                      background: 'rgba(10,10,20,0.8)',
-                      borderRadius: isMobile ? '8px' : '12px',
-                    }} />
+                    {/* 앞면 = 텍스트 */}
+                    <div className={`absolute inset-0 ${isMobile ? 'rounded-xl px-[30px] py-3' : 'rounded-2xl'} flex flex-col justify-center items-center text-center overflow-hidden`}
+                      style={{
+                        backfaceVisibility: 'hidden',
+                        transform: 'rotateY(180deg)',
+                        padding: isMobile ? undefined : 'clamp(20px,3vw,30px) clamp(16px,2vw,30px)',
+                        backgroundImage: `url(${card.image})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                      }}
+                    >
+                      {/* 어두운 오버레이 */}
+                      <div className={`absolute inset-0 bg-[rgba(10,10,20,0.8)] ${isMobile ? 'rounded-lg' : 'rounded-xl'}`} />
 
-                    {/* 텍스트 — zIndex 올리기 */}
-                    <div style={{ position: 'relative', zIndex: 1 }}>
-                      <p style={{
-                        fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
-                        fontSize: isMobile ? '16px' : 'clamp(16px,1.8vw,18px)',
-                        fontWeight: 500, color: '#F0EEFF',
-                        lineHeight: 1.5, letterSpacing: '-0.02em',
-                        marginBottom: isMobile ? '12px' : '20px',
-                      }}>
-                        {card.situation}<br />{card.detail}
-                      </p>
-                      <div style={{
-                        width: isMobile ? '21px' : '28px',
-                        height: '1.5px',
-                        background: '#7C5BF0',
-                        borderRadius: '2px',
-                        marginBottom: isMobile ? '8px' : '16px',
-                        margin: '28px auto 36px',
-                      }} />
-                      <p style={{
-                        fontFamily: "'Pretendard Variable','Pretendard',sans-serif",
-                        fontSize: isMobile ? '15px' : 'clamp(15px,1.6vw,16px)',
-                        fontWeight: 400, color: '#FDCADE',
-                        letterSpacing: '-0.01em',
-                        marginTop: isMobile ? '8px' : '16px',
-                      }}>{card.answer}</p>
+                      {/* 텍스트 */}
+                      <div className="relative z-[1]">
+                        <p className="font-body font-medium text-text leading-[1.5] tracking-[-0.02em]"
+                          style={{
+                            fontSize: isMobile ? '16px' : 'clamp(16px,1.8vw,18px)',
+                            marginBottom: isMobile ? '12px' : '20px',
+                          }}
+                        >
+                          {card.situation}<br />{card.detail}
+                        </p>
+                        <div className="bg-purple rounded-sm mx-auto"
+                          style={{
+                            width: isMobile ? '21px' : '28px',
+                            height: '1.5px',
+                            margin: '28px auto 36px',
+                          }}
+                        />
+                        <p className="font-body font-normal text-pink-soft tracking-[-0.01em]"
+                          style={{
+                            fontSize: isMobile ? '15px' : 'clamp(15px,1.6vw,16px)',
+                            marginTop: isMobile ? '8px' : '16px',
+                          }}
+                        >
+                          {card.answer}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
                 </div>
               </div>
             )
