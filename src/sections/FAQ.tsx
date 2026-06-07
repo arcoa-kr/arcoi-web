@@ -53,7 +53,16 @@ export default function FAQ() {
             return (
               <div key={i} className="border-b border-text/10">
                 <button
-                  onClick={() => setOpenIdx(isOpen ? null : i)}
+                  onClick={() => {
+                    // 펼칠 때만 이벤트 (접을 때는 안 보냄)
+                    if (!isOpen) {
+                      window.gtag?.('event', 'open_faq', {
+                        app_name: 'arcoi',
+                        faq_question: faq.q,
+                      })
+                    }
+                    setOpenIdx(isOpen ? null : i)
+                  }}                  
                   className="w-full py-5 bg-transparent border-none cursor-pointer flex justify-between items-center gap-4"
                 >
                   <span className={`font-body font-normal text-left tracking-[-0.01em] transition-colors duration-300 ${isOpen ? 'text-pink' : 'text-text'}`}
