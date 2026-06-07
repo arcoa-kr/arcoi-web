@@ -7,7 +7,18 @@ export default function StoreButtons() {
     <div>
       {/* 모바일: 토스 버튼 */}
       <div className="block sm:hidden">
-        <a href={STORE_LINKS.toss} target="_blank" rel="noopener noreferrer">
+        <a
+          href={STORE_LINKS.toss}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={() => {
+            window.gtag?.('event', 'click_store', {
+              app_name: 'arcoi',
+              store: 'toss',
+              device: 'mobile',
+            });
+          }}
+        >
           <img src="/Toss.png" alt="토스에서 열기" className="h-10" />
         </a>
       </div>
