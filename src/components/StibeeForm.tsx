@@ -9,8 +9,12 @@ export default function StibeeForm() {
     setSending(true)
     setTimeout(() => {
       setSubmitted(true)
+      window.gtag?.('event', 'subscribe_newsletter', {
+        app_name: 'arcoi',
+        method: 'stibee',
+      })
     }, 1500)
-  }
+  }  
 
   return (
     <>
