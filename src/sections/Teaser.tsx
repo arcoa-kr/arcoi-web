@@ -51,7 +51,18 @@ export default function Teaser() {
 
         {/* 메인 CTA — 월페이퍼 */}
         <div className="fade-in flex justify-center mb-7">
-          <a href="https://arcoa.kr/wallpaper" className="btn-outline" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://arcoa.kr/wallpaper"
+            className="btn-outline"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => {
+              window.gtag?.('event', 'click_wallpaper', {
+                app_name: 'arcoi',
+                link_location: 'main_cta',
+              });
+            }}
+          >
             월페이퍼 둘러보기
           </a>
         </div>
