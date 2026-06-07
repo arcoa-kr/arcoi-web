@@ -39,7 +39,20 @@ export default function Footer() {
           {/* Support */}
           <div className="flex flex-col gap-3.5">
             <h3 className={headingStyle}>Support</h3>
-            <a href="https://arcoa-kr.notion.site/36bb0d619bef81b996f8c783454caa29" target="_blank" rel="noopener noreferrer" className={linkStyle}>Contact</a>
+            <a
+              href="https://arcoa-kr.notion.site/36bb0d619bef81b996f8c783454caa29"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkStyle}
+              onClick={() => {
+                window.gtag?.('event', 'click_contact', {
+                  app_name: 'arcoi',
+                  link_location: 'footer',
+                });
+              }}
+            >
+              Contact
+            </a>
             <a href="https://arcoa-kr.notion.site/arcoi-Terms-of-Service-36bb0d619bef81a0b508f91e907a5f30" target="_blank" rel="noopener noreferrer" className={linkStyle}>Terms of Service</a>
             <a href="https://arcoa-kr.notion.site/arcoi-Privacy-Policy-36bb0d619bef81a0856fc813591277a7" target="_blank" rel="noopener noreferrer" className={`${linkStyle} font-medium !text-text/80 hover:!text-text`}>Privacy Policy</a>
           </div>
