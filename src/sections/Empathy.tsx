@@ -66,7 +66,15 @@ export default function Empathy() {
           >
             오늘의 나를 만나요
           </h2>
+        {/* Sub copy */}
+        <p className="fade-in font-body font-light text-[#DAD0EF] tracking-[-0.01em] leading-[1.65] mt-3 mb-5"
+          style={{ fontSize: 'clamp(16px, 2vw, 17px)' }}
+        >
+          아르코이만의 오리지널 타로로<br />
+          오늘의 당신을 만나 보세요.
+        </p>
         </div>
+        
 
         {/* 카드 3장 */}
         <div className={`flex ${isMobile ? 'flex-col' : 'flex-row'} items-center justify-center`}

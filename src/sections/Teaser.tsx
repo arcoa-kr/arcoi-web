@@ -32,13 +32,13 @@ export default function Teaser() {
         >
           아르코이의 이야기는<br />
           <span className="bg-gradient-to-r from-purple-soft to-pink-soft bg-clip-text text-transparent">
-            이제 시작이에요.
+            이제 시작이에요
           </span>
         </h2>
 
         {/* Sub copy */}
         <p className="fade-in font-body font-light text-[#DAD0EF] tracking-[-0.01em] leading-[1.65] mt-8 mb-5"
-          style={{ fontSize: 'clamp(14px, 2vw, 17px)' }}
+          style={{ fontSize: 'clamp(16px, 2vw, 17px)' }}
         >
           2026년 10월, 정식으로 만나요.<br />
           5명의 마스터와 함께하는 더 넓은 세계가 시작됩니다.
