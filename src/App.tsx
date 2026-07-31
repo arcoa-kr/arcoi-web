@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import Hero from './sections/Hero'
 import Empathy from './sections/Empathy'
+import Reviews from './sections/Reviews'
 import HowItWorks from './sections/HowItWorks'
 import Characters from './sections/Characters'
 import FAQ from './sections/FAQ'
@@ -44,6 +45,7 @@ function App() {
       <Hero />
       <Empathy />
       <HowItWorks />
+      <Reviews />
       <Characters />
       <FAQ />
       <Teaser />
