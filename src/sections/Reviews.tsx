@@ -1,19 +1,23 @@
 import { useEffect, useRef, useState } from 'react'
+import { Star } from 'lucide-react'
 import useIsMobile from '../hooks/useIsMobile'
 import SectionChip from '../components/SectionChip'
 
 const reviews = [
   {
+    rating: 5,
     quote: '오늘의 마음을 차분하게 정리하는 한마디를 건네받는 기분이에요.',
     detail: '’오늘은 이렇게 하루를 보내보자’ 하는 작은 방향이 생겨서 더 만족스러워요.',
     name: '이*영',
   },
   {
+    rating: 5,
     quote: '타로를 잘 몰라도 멋진 카드들이랑 시작할 수 있어요.',
     detail: '매일 다른 카드를 모으고, 어떤 카드가 나올지 기대되는 재미가 있어요.',
     name: '김*영',
   },
   {
+    rating: 5,
     quote: '타로카드도 너무 예쁘고, 자기 전 마음이 편안해져요.',
     detail: '카드를 보는 즐거움까지 있어 하루의 끝에 자주 열어보게 돼요.',
     name: '이*린',
@@ -88,7 +92,7 @@ export default function Reviews() {
           className={`flex ${
             isMobile ? 'flex-col' : 'flex-row'
           } items-stretch justify-center`}
-          style={{ gap: isMobile ? '16px' : 'clamp(18px, 2vw, 28px)' }}
+          style={{ gap: isMobile ? '16px' : 'clamp(24px, 2vw, 32px)' }}
         >
           {reviews.map((review, i) => (
             <article
@@ -127,18 +131,25 @@ export default function Reviews() {
               />
 
               <div className="relative z-[1]">
-                <span
-                  className="font-display text-pink-soft"
-                  style={{
-                    display: 'block',
-                    fontSize: 'clamp(80px, 5vw, 88px)',
-                    lineHeight: 0.8,
-                    marginBottom: '12px',
-                  }}
-                  aria-hidden="true"
-                >
-                  “
-                </span>
+              <div
+                className="flex items-center"
+                style={{
+                  gap: '3px',
+                  marginBottom: '28px',
+                }}
+                aria-label={`평점 ${review.rating}점`}
+              >
+                {Array.from({ length: review.rating }).map((_, starIndex) => (
+                  <Star
+                    key={starIndex}
+                    size={isMobile ? 16 : 17}
+                    strokeWidth={1.8}
+                    className="text-pink-soft"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  />
+                ))}
+              </div>
 
                 <p
                   className="font-body font-medium text-text tracking-[-0.025em] leading-[1.55] m-0"
@@ -191,7 +202,7 @@ export default function Reviews() {
             transition: 'opacity 0.7s ease 800ms',
           }}
         >
-          미니앱 사용자 리뷰 발췌 · 평균 4.5 / 5.0 (리뷰 8개)
+          앱인토스 미니앱 사용자 리뷰 발췌  ·  <strong>4.5</strong> / 5 점
         </p>
       </div>
     </section>

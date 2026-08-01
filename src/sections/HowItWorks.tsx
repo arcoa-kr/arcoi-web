@@ -4,11 +4,11 @@ import SectionChip from '../components/SectionChip'
 import StoreButtons from '../components/StoreButtons'
 
 const steps = [
-  { num: '01', title: '마음계절을 골라요.', desc: '오늘 나는 봄, 여름, 가을, 겨울?\n지금 내 마음의 온도를 계절로 선택해요.', img: '/step-1.webp' },
-  { num: '02', title: '리딩 방법을 정해요.', desc: 'arcoi 타로카드와 보유 타로카드 중에서\n마음에 드는 방법을 고릅니다.', img: '/step-2.webp' },
+  { num: '01', title: '마음계절을 골라요.', desc: '지금 내 마음은 어떤 계절?\n선택한 마음은 ‘이달의 마음’에서 모아봐요.', img: '/step-1.webp' },
+  { num: '02', title: '리딩 방법을 정해요.', desc: 'arcoi 타로카드와 보유 타로카드 중에서\n마음에 드는 방법을 고를 수 있어요.', img: '/step-2.webp' },
   { num: '03', title: '타로카드 1장을 선택해요.', desc: '보유 카드 사용 시 명상 타이머가 제공돼요.\n마음을 가라앉히고 한 장을 선택해 보세요.', img: '/step-3.webp' },
   { num: '04', title: '루나의 해설을 보고 일기를 써요.', desc: '일기는 24시에 초기화되어 부담 없어요.\n[해설 간직하기]를 통해 개인 저장도 가능해요.', img: '/step-4.webp' },
-  { num: '05', title: '오늘의 카드를 간직해요.', desc: '타로카드와 해설을 이미지로 소장해 보세요.\n매일 새로운 카드로 만나길 바라요.', img: '/step-5.webp' },
+  { num: '05', title: '오늘의 카드를 간직해요.', desc: '오늘의 타로카드와 해설을 이미지로 간직해요.\n매일 만난 카드가 나만의 기록이 돼요.', img: '/step-5.webp' },
 ]
 
 export default function HowItWorks() {
