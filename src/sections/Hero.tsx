@@ -66,19 +66,27 @@ export default function Hero() {
             textShadow: '0 2px 32px rgba(13,11,30,0.8)',
           }}
         >
-          하루 한 장,
-          <p style={{ fontSize: 'clamp(52px, 4.7vw, 65px)' }}>타로 일기</p>
+          하루 한 장,<br />오늘의 타로
         </h1>
 
-        <p className="fade-in font-body font-light text-[#DAD0EF] tracking-[-0.01em] ml-1.5 mb-10"
+        <p
+          className="fade-in font-body font-light text-[#DAD0EF] tracking-[-0.01em] ml-1.5 mb-10"
           style={{
             fontSize: 'clamp(16px, 2vw, 17.5px)',
-            lineHeight: 'clamp(26px, 2vw, 30px)',
+            lineHeight: 'clamp(26px, 2vw, 28px)',
           }}
         >
-          궁금한 오늘 하루.<br />
-          번거롭지 않게 케어하고 싶을 때<br />
-          타로 한 장이 나를 알아줘요.
+          <span
+            className="block mb-4"
+            style={{
+              fontSize: 'clamp(18px, 2vw, 19px)',
+            }}
+          >
+            나를 애써 설명하지 않아도 괜찮아요.
+          </span>
+
+          타로 한 장으로 <br />
+          오늘을 가볍게 시작해 보세요.
         </p>
 
         <div className="fade-in ml-1">

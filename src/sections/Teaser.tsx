@@ -40,8 +40,8 @@ export default function Teaser() {
         <p className="fade-in font-body font-light text-[#DAD0EF] tracking-[-0.01em] leading-[1.65] mt-8 mb-5"
           style={{ fontSize: 'clamp(16px, 2vw, 17px)' }}
         >
-          2026년 10월, 정식으로 만나요.<br />
-          5명의 마스터와 함께하는 더 넓은 세계가 시작됩니다.
+          5명의 마스터와 함께하는<br />
+          타로로 나를 읽는 더 깊은 세계가 곧 열립니다.
         </p>
 
         {/* 스토어 버튼 */}

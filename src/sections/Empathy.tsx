@@ -70,8 +70,8 @@ export default function Empathy() {
         <p className="fade-in font-body font-light text-[#DAD0EF] tracking-[-0.01em] leading-[1.65] mt-3 mb-5"
           style={{ fontSize: 'clamp(16px, 2vw, 17px)' }}
         >
-          아르코이만의 오리지널 타로로<br />
-          오늘의 당신을 만나 보세요.
+          비비, 코코, 애쉬가 활약하는<br />
+          아르코이의 오리지널 고양이 타로로 만나요.
         </p>
         </div>
         
