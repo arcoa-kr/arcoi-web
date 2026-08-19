@@ -72,14 +72,14 @@ export default function Hero() {
         <p
           className="fade-in font-body font-light text-[#DAD0EF] tracking-[-0.01em] ml-1.5 mb-10"
           style={{
-            fontSize: 'clamp(16px, 2vw, 17.5px)',
+            fontSize: 'clamp(16px, 2vw, 18px)',
             lineHeight: 'clamp(26px, 2vw, 28px)',
           }}
         >
           <span
-            className="block mb-4"
+            className="block mb-3 font-medium"
             style={{
-              fontSize: 'clamp(18px, 2vw, 19px)',
+              fontSize: 'clamp(17px, 2vw, 18.5px)',
             }}
           >
             나를 애써 설명하지 않아도 괜찮아요.
