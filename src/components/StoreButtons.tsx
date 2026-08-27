@@ -25,8 +25,8 @@ export default function StoreButtons() {
 
       {/* 데스크톱: 안내 문구 */}
       <div className="hidden sm:flex items-center text-[#cccccc] text-sm">
-        <img src="/toss_w.png" alt="toss" className="h-[18px] mr-1" />
-        <p>미니앱에서 <b className="text-[#eeeeee] text-[15px]">아르코이</b>를 검색해 보세요.</p>
+        <img src="/toss_w.png" alt="toss" className="h-[18px]" />
+        <p>에서 <b className="text-[#eeeeee] text-[15px]">아르코이</b>를 검색해 보세요.</p>
       </div>
     </div>
   )

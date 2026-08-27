@@ -13,7 +13,7 @@ const masters = [
       { name: '애쉬', img: '/char-ash.webp' },
     ],
   },
-  { name: 'Ian', nameKo: '이안', role: '분석과 통찰', quote: '핵심은 이것이로군.', img: '/char-ian.webp', color: '#A0C4FF', locked: false },
+  { name: 'Ian', nameKo: '이안', role: '분석과 통찰', quote: '이것이 문제로군.', img: '/char-ian.webp', color: '#A0C4FF', locked: false },
   { name: 'Luna', nameKo: '루나', role: '공감과 위로', quote: '괜찮아, 함께 있을게.', img: '/char-luna.webp', color: '#F4A7BB', locked: false },
   { name: 'Nova', nameKo: '노바', role: 'YES or NO', quote: '지금 당장 GOGO', img: '/char-nova.webp', color: '#FFD07A', locked: false },
   { name: 'Stella', nameKo: '스텔라', role: '확신과 희망', quote: '네가 약한 게 아니라 진심이라는 뜻이야.', img: '/char-stella.webp', color: '#A0FFD0', locked: true },

@@ -82,10 +82,10 @@ export default function Hero() {
               fontSize: 'clamp(17px, 2vw, 18.5px)',
             }}
           >
-            나를 애써 설명하지 않아도 괜찮아요.
+            나를 애써 설명하지 않아도 돼요.
           </span>
 
-          타로 한 장으로 <br />
+          타로 한 장으로<br />
           오늘을 가볍게 시작해 보세요.
         </p>
 
